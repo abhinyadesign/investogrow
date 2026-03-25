@@ -1,0 +1,162 @@
+/* Base Footer styles */
+.footer {
+  width: "100%";
+  padding: 60px 8% 40px;
+  background: #0a0a0a;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+}
+
+.footerContainer {
+  width: "100%";
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.footerTop {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 64px;
+}
+
+.brandCol {
+  flex: 0 0 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: var(--font-geist-sans);
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: -0.5px;
+  margin-bottom: 16px;
+}
+
+.brandContact {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.7);
+}
+
+.linksGrid {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+  max-width: 800px;
+}
+
+.linkColumn {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.linkColumn h4 {
+  font-family: var(--font-geist-sans);
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 8px;
+}
+
+.linkColumn a {
+  font-size: 15px;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.linkColumn a:hover {
+  color: #fff;
+}
+
+.footerBottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 40px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+}
+
+.socials {
+  display: flex;
+  gap: 16px;
+}
+
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: rgba(255,255,255,0.1);
+  border-radius: 50%;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s ease;
+}
+
+.socialLink:hover {
+  background: rgba(255,255,255,0.2);
+}
+
+@media (max-width: 1024px) {
+  .footerTop {
+    flex-direction: column;
+  }
+  .brandCol {
+    flex: none;
+    width: "100%";
+  }
+  .linksGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .footer {
+    padding: 60px 24px 40px;
+  }
+
+  .footerContainer {
+    gap: 48px;
+  }
+
+  .logo {
+    font-size: 20px;
+    margin-bottom: 12px;
+  }
+
+  .brandCol {
+    gap: 16px;
+  }
+
+  .linksGrid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .footerBottom {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+    text-align: center;
+    padding-top: 32px;
+  }
+}

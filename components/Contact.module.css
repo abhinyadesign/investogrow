@@ -1,0 +1,189 @@
+.contactSectionWrapper {
+  width: 100%;
+  padding: 40px 4%;
+  background-color: var(--background-primary, #ffffff);
+}
+
+.contactSection {
+  position: relative;
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  border-radius: 40px;
+  overflow: hidden;
+  min-height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 5%;
+}
+
+.backgroundImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6); /* Slightly darker for better contrast with form fields */
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  max-width: 1200px;
+  display: flex;
+  gap: 60px;
+  align-items: center;
+}
+
+.header {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.title {
+  font-family: var(--font-geist-sans);
+  font-size: 56px;
+  font-weight: 500;
+  color: #ffffff;
+  line-height: 1.1;
+  letter-spacing: -1px;
+}
+
+.description {
+  font-size: 18px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 500px;
+}
+
+.formWrapper {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  padding: 40px;
+  border-radius: 24px;
+  border: 1px solid rgba(255,255,255,0.2);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.row {
+  display: flex;
+  gap: 20px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid transparent;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 16px;
+  color: #111;
+  font-family: var(--font-inter);
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.inputGroup input::placeholder,
+.inputGroup textarea::placeholder {
+  color: #666;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+  background: #ffffff;
+  border-color: #111;
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.inputGroup textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.submitBtn {
+  margin-top: 8px;
+  background: #ffffff;
+  color: #111111;
+  border: none;
+  padding: 18px 36px;
+  border-radius: 100px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  width: 100%;
+}
+
+.submitBtn:hover {
+  background: #f0f0f0;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 1024px) {
+  .container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .header {
+    align-items: center;
+  }
+
+  .title {
+    font-size: 40px;
+  }
+}
+
+@media (max-width: 768px) {
+  .contactSectionWrapper {
+    padding: 40px 24px;
+  }
+
+  .contactSection {
+    border-radius: 24px;
+    padding: 60px 24px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .description {
+    font-size: 16px;
+  }
+
+  .formWrapper {
+    padding: 24px;
+    border-radius: 20px;
+  }
+
+  .row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
