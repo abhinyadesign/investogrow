@@ -41,23 +41,23 @@
   border: 1px solid var(--nri-accent);
   color: var(--nri-accent);
   border-radius: 50px;
-  font-size: 0.85rem;
-  font-weight: 600;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semibold);
   letter-spacing: 1px;
   text-transform: uppercase;
   margin-bottom: 1.5rem;
 }
 
 .title {
-  font-size: clamp(2.5rem, 5vw, 4.5rem);
-  font-weight: 800;
+  font-size: var(--fs-hero);
+  font-weight: var(--fw-extrabold);
   line-height: 1.1;
   margin-bottom: 1.5rem;
   letter-spacing: -1px;
 }
 
 .description {
-  font-size: 1.1rem;
+  font-size: var(--fs-p-lg);
   color: var(--nri-text-muted);
   line-height: 1.6;
   margin-bottom: 2.5rem;

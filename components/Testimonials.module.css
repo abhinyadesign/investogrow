@@ -28,7 +28,7 @@
   padding: 8px 20px;
   border-radius: 100px;
   border: 1px solid rgba(0,0,0,0.1);
-  font-size: 14px;
+  font-size: var(--fs-sm);
   color: var(--text-muted);
   width: max-content;
   margin-bottom: 24px;
@@ -36,15 +36,15 @@
 
 .title {
   font-family: var(--font-geist-sans);
-  font-size: 40px;
-  font-weight: 700;
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
   line-height: 1.2;
   color: var(--text-main);
   margin-bottom: 16px;
 }
 
 .description {
-  font-size: 16px;
+  font-size: var(--fs-p-lg);
   line-height: 1.6;
   color: var(--text-muted);
 }
@@ -76,7 +76,7 @@
 }
 
 .quoteText {
-  font-size: 16px;
+  font-size: var(--fs-p);
   line-height: 1.6;
   color: var(--text-muted);
   margin-bottom: 32px;
@@ -106,13 +106,13 @@
 
 .authorName {
   font-family: var(--font-geist-sans);
-  font-size: 16px;
-  font-weight: 700;
+  font-size: var(--fs-p);
+  font-weight: var(--fw-bold);
   color: var(--text-main);
 }
 
 .authorRole {
-  font-size: 14px;
+  font-size: var(--fs-sm);
   color: var(--text-muted);
 }
 
@@ -149,11 +149,6 @@
   }
 
   .quoteText {
-    font-size: 15px;
     margin-bottom: 24px;
-  }
-
-  .title {
-    font-size: 32px;
   }
 }

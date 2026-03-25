@@ -27,14 +27,14 @@
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-extrabold);
   color: var(--nri-accent);
 }
 
 .brandContact {
   color: var(--nri-text-muted);
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
   line-height: 1.6;
   display: flex;
   flex-direction: column;
@@ -54,15 +54,15 @@
 }
 
 .linkColumn h4 {
-  font-size: 1.1rem;
+  font-size: var(--fs-p-lg);
   margin-bottom: 0.5rem;
   color: var(--nri-text);
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
 }
 
 .linkColumn a {
   color: var(--nri-text-muted);
-  font-size: 0.95rem;
+  font-size: var(--fs-p);
   transition: color 0.3s ease;
 }
 
@@ -77,7 +77,7 @@
   padding-top: 2rem;
   border-top: 1px solid var(--nri-nav-border);
   color: var(--nri-text-muted);
-  font-size: 0.85rem;
+  font-size: var(--fs-sm);
 }
 
 .socials {

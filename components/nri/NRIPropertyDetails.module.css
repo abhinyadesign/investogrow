@@ -25,10 +25,10 @@
 }
 
 .titleWrapper h1 {
-  font-size: 3rem;
+  font-size: var(--fs-h2);
   margin-bottom: 0.5rem;
   color: var(--nri-text);
-  font-weight: 800;
+  font-weight: var(--fw-extrabold);
   letter-spacing: -1px;
 }
 
@@ -37,7 +37,7 @@
   align-items: center;
   gap: 0.5rem;
   color: var(--nri-text-muted);
-  font-size: 1.1rem;
+  font-size: var(--fs-p-lg);
 }
 
 .pricing {
@@ -49,8 +49,8 @@
 }
 
 .price {
-  font-size: 2.5rem;
-  font-weight: 800;
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-extrabold);
   color: var(--nri-accent);
 }
 
@@ -60,10 +60,10 @@
   color: var(--nri-accent);
   padding: 0.5rem 1rem;
   border-radius: 50px;
-  font-weight: 600;
+  font-weight: var(--fw-semibold);
   border: 1px solid var(--nri-accent);
   text-transform: uppercase;
-  font-size: 0.8rem;
+  font-size: var(--fs-sm);
   letter-spacing: 1px;
 }
 
@@ -97,13 +97,13 @@
 }
 
 .featureValue {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
   color: var(--nri-text);
 }
 
 .featureLabel {
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
   color: var(--nri-text-muted);
 }
 
@@ -114,16 +114,16 @@
 }
 
 .mainContent h2 {
-  font-size: 1.8rem;
+  font-size: var(--fs-h2);
   margin-bottom: 1.5rem;
   color: var(--nri-accent);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 
 .mainContent p {
   line-height: 1.8;
   color: var(--nri-text-muted);
-  font-size: 1.05rem;
+  font-size: var(--fs-p-lg);
   margin-bottom: 1.5rem;
 }
 
@@ -137,12 +137,12 @@
 }
 
 .sidebarCard h3 {
-  font-size: 1.5rem;
+  font-size: var(--fs-h3);
   margin-bottom: 1rem;
   border-bottom: 1px solid var(--nri-card-border);
   padding-bottom: 1rem;
   color: var(--nri-text);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
 }
 
 .sidebarCard p {
@@ -168,8 +168,5 @@
   .featuresStrip {
     flex-wrap: wrap;
     gap: 1.5rem;
-  }
-  .titleWrapper h1 {
-    font-size: 2.25rem;
   }
 }

@@ -64,8 +64,8 @@
 
 .title {
   font-family: var(--font-geist-sans);
-  font-size: 24px;
-  font-weight: 600;
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-semibold);
   color: var(--text-main);
 }
 

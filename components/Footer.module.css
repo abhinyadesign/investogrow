@@ -35,8 +35,8 @@
   align-items: center;
   gap: 12px;
   font-family: var(--font-geist-sans);
-  font-size: 24px;
-  font-weight: 700;
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
   color: #fff;
   letter-spacing: -0.5px;
   margin-bottom: 16px;
@@ -46,7 +46,7 @@
   display: flex;
   flex-direction: column;
   gap: 16px;
-  font-size: 15px;
+  font-size: var(--fs-sm);
   line-height: 1.6;
   color: rgba(255,255,255,0.7);
 }
@@ -67,14 +67,14 @@
 
 .linkColumn h4 {
   font-family: var(--font-geist-sans);
-  font-size: 16px;
-  font-weight: 600;
+  font-size: var(--fs-p);
+  font-weight: var(--fw-semibold);
   color: #fff;
   margin-bottom: 8px;
 }
 
 .linkColumn a {
-  font-size: 15px;
+  font-size: var(--fs-sm);
   color: rgba(255,255,255,0.7);
   text-decoration: none;
   transition: color 0.2s;
@@ -91,7 +91,7 @@
   padding-top: 40px;
   border-top: 1px solid rgba(255,255,255,0.1);
   color: rgba(255,255,255,0.6);
-  font-size: 14px;
+  font-size: var(--fs-sm);
 }
 
 .socials {
@@ -139,7 +139,6 @@
   }
 
   .logo {
-    font-size: 20px;
     margin-bottom: 12px;
   }
 

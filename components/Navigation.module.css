@@ -24,8 +24,8 @@
   align-items: center;
   gap: 12px;
   font-family: var(--font-geist-sans);
-  font-weight: 700;
-  font-size: 26px;
+  font-weight: var(--fw-bold);
+  font-size: var(--fs-h3);
   letter-spacing: -0.5px;
   color: var(--text-main);
   text-decoration: none;
@@ -45,11 +45,11 @@
 
 .link {
   font-family: var(--font-inter);
-  font-size: 16px;
+  font-size: var(--fs-p);
   color: var(--foreground);
   text-decoration: none;
   transition: color 0.2s;
-  font-weight: 500;
+  font-weight: var(--fw-medium);
 }
 
 .link:hover {
@@ -62,8 +62,8 @@
   border-radius: 100px;
   padding: 12px 14px 12px 24px;
   font-family: var(--font-inter);
-  font-weight: 500;
-  font-size: 15px;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-p);
   display: flex;
   align-items: center;
   gap: 12px;
@@ -149,9 +149,5 @@
     flex-direction: column;
     align-items: center;
     gap: 32px;
-  }
-
-  .link {
-    font-size: 20px;
   }
 }

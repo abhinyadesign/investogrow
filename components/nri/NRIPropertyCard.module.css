@@ -28,8 +28,8 @@
   color: var(--nri-bg);
   padding: 0.25rem 0.75rem;
   border-radius: 50px;
-  font-size: 0.75rem;
-  font-weight: 700;
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
   text-transform: uppercase;
   z-index: 2;
 }
@@ -43,21 +43,21 @@
 
 .price {
   color: var(--nri-accent);
-  font-size: 1.5rem;
-  font-weight: 800;
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-extrabold);
   margin-bottom: 0.5rem;
 }
 
 .title {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: var(--fs-p-lg);
+  font-weight: var(--fw-bold);
   margin-bottom: 0.5rem;
   color: var(--nri-text);
 }
 
 .location {
   color: var(--nri-text-muted);
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
   margin-bottom: 1rem;
   display: flex;
   align-items: center;
@@ -77,5 +77,5 @@
   align-items: center;
   gap: 0.5rem;
   color: var(--nri-text-muted);
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
 }

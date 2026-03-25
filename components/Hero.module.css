@@ -42,17 +42,17 @@
 
 .title {
   font-family: var(--font-geist-sans);
-  font-size: 84px;
+  font-size: var(--fs-hero);
   line-height: 1.05;
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   margin-bottom: 16px;
   color: #fff;
 }
 
 .description {
-  font-size: 18px;
+  font-size: var(--fs-p-lg);
   line-height: 1.6;
-  font-weight: 400;
+  font-weight: var(--fw-normal);
   margin-bottom: 32px;
   opacity: 0.9;
   max-width: 600px;
@@ -64,8 +64,8 @@
   border-radius: 100px;
   padding: 12px 14px 12px 24px;
   font-family: var(--font-inter);
-  font-weight: 500;
-  font-size: 16px;
+  font-weight: var(--fw-medium);
+  font-size: var(--fs-p);
   display: inline-flex;
   align-items: center;
   gap: 12px;
@@ -108,8 +108,8 @@
 
 .statItem h3 {
   font-family: var(--font-geist-sans);
-  font-size: 56px;
-  font-weight: 400;
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-normal);
   margin-bottom: 4px;
   color: #fff;
   display: flex;
@@ -117,12 +117,12 @@
 }
 
 .statItem h3 sup {
-  font-size: 32px;
+  font-size: var(--fs-h3);
   margin-top: 8px;
 }
 
 .statItem p {
-  font-size: 15px;
+  font-size: var(--fs-sm);
   opacity: 0.8;
   font-family: var(--font-inter);
 }
@@ -144,9 +144,6 @@
 }
 
 @media (max-width: 1024px) {
-  .title {
-    font-size: 64px;
-  }
 }
 
 @media (max-width: 768px) {
@@ -167,7 +164,6 @@
   }
 
   .title {
-    font-size: 42px;
     margin-bottom: 24px;
   }
 
@@ -186,7 +182,6 @@
   }
 
   .statItem h3 {
-    font-size: 42px;
     justify-content: center;
   }
 

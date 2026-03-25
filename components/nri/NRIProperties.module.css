@@ -17,17 +17,17 @@
 
 .subtitle {
   color: var(--nri-accent);
-  font-weight: 700;
+  font-weight: var(--fw-bold);
   letter-spacing: 2px;
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: var(--fs-sm);
   display: block;
   margin-bottom: 1rem;
 }
 
 .title {
-  font-size: 2.5rem;
-  font-weight: 800;
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-extrabold);
   color: var(--nri-text);
 }
 
