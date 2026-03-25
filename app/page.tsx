@@ -18,7 +18,7 @@ export default function Home() {
       
       <section id="properties" className={styles.section}>
        <div className={styles.container}>
-         <h2 style={{ fontFamily: "var(--font-geist-sans)", fontSize: 48, fontWeight: 700, marginBottom: 48, textAlign: "left", letterSpacing: "-1px" }}>
+         <h2 style={{ fontFamily: "var(--font-geist-sans)", fontSize: "var(--fs-h2)", fontWeight: 700, marginBottom: 48, textAlign: "left", letterSpacing: "-1px" }}>
           {siteData.main.mainProperties.title}
         </h2>
         
