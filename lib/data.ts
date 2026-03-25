@@ -18,7 +18,7 @@ export const siteData = {
       founder: {
         heading: "About the\nFounder",
         paragraphs: [
-          'At the heart of Investo Grow is the vision and expertise of its founder, <strong>Nitin Jain</strong>, a seasoned professional with over 25 years of sales experience and 6 years of dedicated expertise in the real estate sector.',
+          'At the heart of Investo Grow is the vision and expertise of its founder, Nitin Jain, a seasoned professional with over 25 years of sales experience and 6 years of dedicated expertise in the real estate sector.',
           'Nitin’s journey into real estate began with his own investments. Through firsthand experience, he recognized the immense potential this sector holds for wealth creation when approached with the right strategy and guidance. What started as a personal investment journey soon evolved into a larger vision—to help others invest smartly and grow their wealth with confidence.',
           'Driven by this idea, Investo Grow was founded in 2026, with a mission to simplify real estate investments and make them accessible, transparent, and rewarding for everyone.',
           'With a strong foundation in sales and a deep understanding of market dynamics, Nitin brings a client-first approach, ensuring every investor receives trustworthy advice and value-driven opportunities.'

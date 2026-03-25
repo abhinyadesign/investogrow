@@ -1,5 +1,5 @@
 .section {
-  width: "100%";
+  width: 100%;
   padding: 80px 8%;
   background: var(--background-secondary);
   display: flex;
@@ -7,7 +7,7 @@
 }
 
 .container {
-  width: "100%";
+  width: 100%;
   max-width: 1440px;
   display: flex;
   flex-direction: row;
