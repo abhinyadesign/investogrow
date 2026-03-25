@@ -15,7 +15,7 @@ export default function NRIPropertiesPage() {
            <h1 style={{ fontSize: "3rem", marginBottom: "1rem" }}>Premium <span className="gold-text">Properties</span></h1>
            <p style={{ color: "var(--nri-text-muted)", marginBottom: "4rem", maxWidth: "600px" }}>Explore our curated collection of luxury properties in Noida, specifically handpicked for our NRI clients ensuring maximum ROI and security.</p>
            
-           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(350px, 1fr))", gap: "2.5rem" }}>
+           <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(min(100%, 350px), 1fr))", gap: "2.5rem" }}>
              {allProperties.map((prop, idx) => (
                 <NRIPropertyCard key={idx} {...prop} />
              ))}

@@ -122,9 +122,14 @@
   }
   .header {
     flex: none;
-    width: "100%";
+    width: 100%;
     position: static;
     margin-bottom: 40px;
+    text-align: center;
+    align-items: center;
+  }
+  .tag {
+    margin: 0 auto 24px;
   }
 }
 

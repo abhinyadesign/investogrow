@@ -25,9 +25,9 @@ export default function About({ data }: { data: any }) {
         {/* About the Founder */}
         <div className={styles.topContentRow} style={{ marginBottom: "4rem" }}>
           <div className={styles.textContent}>
-             <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: data.founder.heading.replace(/\n/g, '<br />') }} />
+             <h2 className={styles.title} >{data.founder.heading}</h2>
              {data.founder.paragraphs.map((p: string, idx: number) => (
-               <p key={idx} className={styles.description} dangerouslySetInnerHTML={{ __html: p }} />
+               <p key={idx} className={styles.description} >{p}</p>
              ))}
           </div>
           <div className={styles.imageContent}>
@@ -59,7 +59,7 @@ export default function About({ data }: { data: any }) {
         {/* Why Invest With Us */}
         <div style={{ marginBottom: "4rem" }}>
           <h2 className={styles.title} style={{ textAlign: "center", marginBottom: "3rem", width: "100%" }}>{data.whyInvest.title}</h2>
-          <div className={styles.bottomCardsRow} style={{ gridTemplateColumns: "repeat(auto-fit, minmax(250px, 1fr))", display: "grid", gap: "2rem" }}>
+          <div className={styles.bottomCardsRow} style={{ gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 250px), 1fr))", display: "grid", gap: "2rem" }}>
             {data.whyInvest.items.map((item: any, idx: number) => (
               <div className={styles.infoCard} key={idx}>
                 <div className={styles.iconCircle}>{getIcon(item.icon)}</div>
