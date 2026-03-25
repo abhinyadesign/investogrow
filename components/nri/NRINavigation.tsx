@@ -5,10 +5,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowUpRight, Menu, X, ArrowLeft } from "lucide-react";
 import styles from "./NRINavigation.module.css";
+import ContactModal from "../ContactModal";
 
 export default function NRINavigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,7 +39,7 @@ export default function NRINavigation() {
           </li>
         </ul>
 
-        <button className={styles.contactBtn}>
+        <button className={styles.contactBtn} onClick={() => setIsContactModalOpen(true)}>
           Request Consultation
           <ArrowUpRight size={16} strokeWidth={2.5} />
         </button>
@@ -46,6 +48,8 @@ export default function NRINavigation() {
       <button className={styles.mobileMenuBtn} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
+
+      <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
     </nav>
   );
 }

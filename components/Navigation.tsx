@@ -5,10 +5,12 @@ import Link from "next/link";
 import { ArrowUpRight, Menu, X } from "lucide-react";
 import Image from "next/image";
 import styles from "./Navigation.module.css";
+import ContactModal from "./ContactModal";
 
 export default function Navigation() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isContactModalOpen, setIsContactModalOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -35,7 +37,7 @@ export default function Navigation() {
           <li><Link href="/nri" className={styles.link} onClick={() => setMobileMenuOpen(false)} style={{ color: "#d4af37", fontWeight: "bold" }}>NRI Corner</Link></li>
         </ul>
 
-        <button className={styles.contactBtn}>
+        <button className={styles.contactBtn} onClick={() => setIsContactModalOpen(true)}>
           <span className={styles.dot}></span>
           Contact Us Now
           <span className={styles.icon}>
@@ -47,6 +49,8 @@ export default function Navigation() {
       <button className={styles.mobileMenuBtn} onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
         {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
       </button>
+
+      <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
     </nav>
   );
 }
