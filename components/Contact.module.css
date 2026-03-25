@@ -161,11 +161,11 @@
 
 @media (max-width: 768px) {
   .contactSectionWrapper {
-    padding: 40px 24px;
+    padding: 0;
   }
 
   .contactSection {
-    border-radius: 24px;
+    border-radius: 0;
     padding: 60px 24px;
   }
 
@@ -180,6 +180,7 @@
   .formWrapper {
     padding: 24px;
     border-radius: 20px;
+    width: 100%;
   }
 
   .row {

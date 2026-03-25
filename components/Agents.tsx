@@ -12,7 +12,10 @@ export default function Agents({ data }: { data: any }) {
     <section className={styles.section} id="agents">
       <div className={styles.container}>
         <div className={styles.header}>
-           <h2 className={styles.title} dangerouslySetInnerHTML={{ __html: data.title.replace(/\n/g, '<br />') }} />
+           <h2 className={styles.title} >{data.title}</h2>
+           {data.description && (
+             <p className={styles.description}>{data.description}</p>
+           )}
         </div>
         
         <div className={styles.agentsGrid}>
