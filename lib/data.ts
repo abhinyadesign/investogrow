@@ -66,7 +66,7 @@ export const siteData = {
       ]
     },
     agents: {
-      title: "PERSONALIZED SERVICE,\nPROVEN EXPERTISE",
+      title: "Personalized Service,\nProven Expertise",
       description: "Our dedicated professionals are here to guide you. We combine local market knowledge with a tailored approach to ensure you find exactly what you're looking for.",
       items: [
         { name: "Isabella Wright", role: "Luxury Rental Expert", image: "/images/dbWDZuR15FVj9cDN2ngoxogWU.jpg" },

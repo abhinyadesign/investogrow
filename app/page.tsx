@@ -9,15 +9,16 @@ import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 import { siteData } from "@/lib/data";
-
+import styles from "@/components/About.module.css";
 export default function Home() {
   return (
     <main style={{ backgroundColor: "var(--background-secondary)", minHeight: "100vh", }}>
       <Navigation />
       <Hero data={siteData.main.hero} />
       
-      <section id="properties" style={{ padding: "120px 8%", maxWidth: "1600px", margin: "0 auto" }}>
-        <h2 style={{ fontFamily: "var(--font-geist-sans)", fontSize: 48, fontWeight: 700, marginBottom: 48, textAlign: "left", letterSpacing: "-1px" }}>
+      <section id="properties" className={styles.section}>
+       <div className={styles.container}>
+         <h2 style={{ fontFamily: "var(--font-geist-sans)", fontSize: 48, fontWeight: 700, marginBottom: 48, textAlign: "left", letterSpacing: "-1px" }}>
           {siteData.main.mainProperties.title}
         </h2>
         
@@ -30,6 +31,7 @@ export default function Home() {
             <PropertyCard key={prop.id} property={prop} index={idx} />
           ))}
         </div>
+       </div>
       </section>
 
       <Services data={siteData.main.services} />

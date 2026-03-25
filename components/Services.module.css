@@ -1,6 +1,6 @@
 .section {
   width: 100%;
-  padding: 80px 8%;
+  padding: 32px 8%;
   background-color: var(--background-primary, #ffffff);
   display: flex;
   justify-content: center;
@@ -15,7 +15,7 @@
 
 .header {
   margin-bottom: 40px;
-  max-width: 800px;
+  /* max-width: 800px; */
   text-align: left;
 }
 
@@ -181,7 +181,7 @@
   
   .header {
     margin-bottom: 40px;
-    text-align: center;
+    /* text-align: center; */
   }
 }
 
