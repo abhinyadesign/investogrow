@@ -1,66 +1,44 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+import Navigation from "@/components/Navigation";
+import Hero from "@/components/Hero";
+import PropertyCard, { Property } from "@/components/PropertyCard";
+import Services from "@/components/Services";
+import About from "@/components/About";
+import Agents from "@/components/Agents";
+import Testimonials from "@/components/Testimonials";
+import FAQ from "@/components/FAQ";
+import Contact from "@/components/Contact";
+import Footer from "@/components/Footer";
+import { siteData } from "@/lib/data";
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.tsx file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <main style={{ backgroundColor: "var(--background-secondary)", minHeight: "100vh", }}>
+      <Navigation />
+      <Hero data={siteData.main.hero} />
+      
+      <section id="properties" style={{ padding: "120px 8%", maxWidth: "1600px", margin: "0 auto" }}>
+        <h2 style={{ fontFamily: "var(--font-geist-sans)", fontSize: 48, fontWeight: 700, marginBottom: 48, textAlign: "left", letterSpacing: "-1px" }}>
+          {siteData.main.mainProperties.title}
+        </h2>
+        
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "repeat(auto-fit, minmax(380px, 1fr))",
+          gap: "32px"
+        }}>
+          {siteData.main.mainProperties.items.map((prop, idx) => (
+            <PropertyCard key={prop.id} property={prop} index={idx} />
+          ))}
         </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+      </section>
+
+      <Services data={siteData.main.services} />
+      <About data={siteData.main.about} />
+      <Agents data={siteData.main.agents} />
+      <Testimonials data={siteData.main.testimonials} />
+      <FAQ data={siteData.main.faq} />
+      <Contact data={siteData.main.contact} />
+      <Footer />
+    </main>
   );
 }

@@ -1,0 +1,86 @@
+/* nri-theme.css */
+.nri-theme {
+  /* Premium Dark & Gold Theme */
+  --nri-bg: #0d0f12; /* Deep Charcoal/Black */
+  --nri-text: #f0f0f0; /* Off-white for general text */
+  --nri-text-muted: #a0a0a0;
+  
+  --nri-accent: #d4af37; /* Metallic Gold */
+  --nri-accent-hover: #f1c953;
+  --nri-accent-dark: #b08d27;
+  
+  --nri-card-bg: #15181c;
+  --nri-card-border: #2a2d35;
+  
+  --nri-nav-bg: rgba(13, 15, 18, 0.85); /* For glassmorphism */
+  --nri-nav-border: rgba(212, 175, 55, 0.2);
+  
+  background-color: var(--nri-bg);
+  color: var(--nri-text);
+  min-height: 100vh;
+  font-family: var(--font-inter), sans-serif;
+}
+
+.nri-theme h1, 
+.nri-theme h2, 
+.nri-theme h3, 
+.nri-theme h4, 
+.nri-theme h5, 
+.nri-theme h6 {
+  font-family: var(--font-geist-sans), sans-serif;
+  color: var(--nri-text);
+}
+
+.nri-theme .gold-text {
+  color: var(--nri-accent);
+}
+
+.nri-theme .gold-btn {
+  background-color: var(--nri-accent);
+  color: #0d0f12;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.nri-theme .gold-btn:hover {
+  background-color: var(--nri-accent-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.nri-theme .outline-btn {
+  background-color: transparent;
+  color: var(--nri-accent);
+  border: 1px solid var(--nri-accent);
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.nri-theme .outline-btn:hover {
+  background-color: rgba(212, 175, 55, 0.1);
+}
+
+.nri-theme a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
+}
+
+.nri-theme a:hover {
+  color: var(--nri-accent);
+}
