@@ -58,7 +58,7 @@ export default function About({ data }: { data: any }) {
 
         {/* Why Invest With Us */}
         <div style={{ marginBottom: "4rem" }}>
-          <h2 className={styles.title} style={{ textAlign: "center", marginBottom: "3rem", width: "100%" }}>{data.whyInvest.title}</h2>
+          <h2 className={styles.title} style={{ textAlign: "left", marginBottom: "3rem", width: "100%" }}>{data.whyInvest.title}</h2>
           <div className={styles.bottomCardsRow} style={{ gridTemplateColumns: "repeat(auto-fit, minmax(min(100%, 250px), 1fr))", display: "grid", gap: "2rem" }}>
             {data.whyInvest.items.map((item: any, idx: number) => (
               <div className={styles.infoCard} key={idx}>
@@ -72,7 +72,7 @@ export default function About({ data }: { data: any }) {
 
         {/* Benefits of Real Estate Investment */}
         <div>
-          <h2 className={styles.title} style={{ textAlign: "center", marginBottom: "3rem", width: "100%" }}>{data.benefits.title}</h2>
+          <h2 className={styles.title} style={{ textAlign: "left", marginBottom: "3rem", width: "100%" }}>{data.benefits.title}</h2>
           <div className={styles.bottomCardsRow} style={{ gridTemplateColumns: "1fr 1fr", display: "grid", gap: "2rem" }}>
             {data.benefits.items.map((item: any, idx: number) => (
               <div className={styles.infoCard} key={idx}>

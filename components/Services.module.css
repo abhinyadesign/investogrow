@@ -1,36 +1,38 @@
 .section {
   width: 100%;
-  padding: 60px 5%;
+  padding: 80px 8%;
   background-color: var(--background-primary, #ffffff);
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
 }
 
 .container {
   width: 100%;
-  max-width: 1400px;
+  max-width: 1440px;
+  display: flex;
+  flex-direction: column;
 }
 
 .header {
-  margin-bottom: 32px;
-  max-width: 600px;
+  margin-bottom: 40px;
+  max-width: 800px;
+  text-align: left;
 }
 
 .mainTitle {
   font-family: var(--font-geist-sans);
   font-size: var(--fs-h2);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-bold);
   line-height: 1.1;
   margin-bottom: 16px;
-  color: var(--text-main, #111);
-  letter-spacing: -1px;
+  color: var(--text-main);
+  /* letter-spacing matches the other bold titles, usually no strict negative unless specified globally */
 }
 
 .subtitle {
   font-size: var(--fs-p-lg);
   line-height: 1.6;
-  color: var(--text-muted, #666);
+  color: var(--text-muted);
 }
 
 .contentWrapper {

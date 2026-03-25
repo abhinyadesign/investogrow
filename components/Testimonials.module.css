@@ -125,8 +125,8 @@
     width: 100%;
     position: static;
     margin-bottom: 40px;
-    text-align: center;
-    align-items: center;
+    text-align: left;
+    align-items: flex-start;
   }
   .tag {
     margin: 0 auto 24px;

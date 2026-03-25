@@ -122,8 +122,8 @@
   .header {
     flex: none;
     width: 100%;
-    text-align: center;
-    align-items: center;
+    text-align: left;
+    align-items: flex-start;
   }
 
   .tag {

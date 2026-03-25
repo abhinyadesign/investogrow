@@ -59,7 +59,7 @@
 }
 
 .exploreBtn {
-  background: #fff;
+  background: var(--surface-primary, #fff);
   color: var(--text-main);
   border-radius: 100px;
   padding: 12px 14px 12px 24px;
@@ -69,16 +69,18 @@
   display: inline-flex;
   align-items: center;
   gap: 12px;
-  transition: transform 0.2s ease, background 0.2s ease;
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: var(--shadow-sm);
 }
 
 .exploreBtn:hover {
-  transform: scale(1.05);
-  background: #f0f0f0;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  background: var(--surface-primary, #fff);
 }
 
 .exploreBtn:hover .icon {
-  transform: translate(2px, -2px) scale(1.1);
+  transform: translateX(4px);
 }
 
 .icon {
@@ -143,6 +145,41 @@
   /* z-index: 100; */
 }
 
+.badgeAvatars {
+  display: flex;
+  margin-left: 10px;
+}
+
+.avatarCircle {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 3px solid white;
+  margin-left: -15px;
+  background-color: #ccc;
+  background-size: cover;
+}
+
+.badgeText {
+  display: flex;
+  flex-direction: column;
+}
+
+.badgeText strong {
+  font-size: 16px;
+  font-family: var(--font-inter);
+}
+
+.badgeRating {
+  color: #F59E0B;
+  font-size: 16px;
+}
+
+.badgeRating span {
+  color: #666;
+  font-size: 13px;
+}
+
 @media (max-width: 1024px) {
 }
 
@@ -175,23 +212,56 @@
   }
 
   .statsRow {
-    flex-direction: column;
-    gap: 32px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px 16px;
     margin-top: 48px;
-    align-items: center;
+    align-items: start;
+    width: 100%;
   }
 
   .statItem h3 {
     justify-content: center;
+    font-size: clamp(24px, 5vw, 32px); /* Scale down if needed */
+  }
+  
+  .statItem p {
+    font-size: 12px;
   }
 
   .agentsBadge {
     position: relative;
     right: auto;
     bottom: auto;
-    margin-top: 48px;
-    display: inline-flex;
-    border-radius: 20px;
-    padding: 12px 24px;
+    margin-top: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 16px;
+    padding: 16px 12px;
+    gap: 8px;
+    width: 100%;
+    box-sizing: border-box;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .badgeAvatars {
+    margin-left: 15px; /* Centers avatars by offsetting the first negative margin */
+  }
+
+  .avatarCircle {
+    width: 40px;
+    height: 40px;
+  }
+
+  .badgeText {
+    align-items: center;
+  }
+
+  .badgeText strong {
+    font-size: 14px;
+    line-height: 1.2;
+    margin-bottom: 2px;
   }
 }

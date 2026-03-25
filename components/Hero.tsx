@@ -48,29 +48,25 @@ export default function Hero({ data }: { data: any }) {
               <p>{stat.label}</p>
             </div>
           ))}
-        </div>
-      </motion.div>
-      
-      <motion.div 
-        className={styles.agentsBadge}
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, delay: 0.4 }}
-      >
-        <div style={{ display: "flex", marginLeft: 10 }}>
-          {data.agentsBadge.avatars.map((avatar: number, i: number) => (
-            <div key={i} style={{
-              width: 48, height: 48, borderRadius: "50%", 
-              border: "3px solid white", marginLeft: -15,
-              background: "#ccc",
-              backgroundImage: `url(https://i.pravatar.cc/100?img=${avatar})`,
-              backgroundSize: "cover"
-            }} />
-          ))}
-        </div>
-        <div>
-          <strong style={{ fontSize: 16, fontFamily: "var(--font-inter)"}}>{data.agentsBadge.text}</strong>
-          <div style={{ color: "#F59E0B", fontSize: 16 }}>★★★★★ <span style={{color: "#666", fontSize: 13}}>{data.agentsBadge.rating}</span></div>
+
+          <motion.div 
+            className={styles.agentsBadge}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <div className={styles.badgeAvatars}>
+              {data.agentsBadge.avatars.map((avatar: number, i: number) => (
+                <div key={i} className={styles.avatarCircle} style={{
+                  backgroundImage: `url(https://i.pravatar.cc/100?img=${avatar})`,
+                }} />
+              ))}
+            </div>
+            <div className={styles.badgeText}>
+              <strong>{data.agentsBadge.text}</strong>
+              <div className={styles.badgeRating}>★★★★★ <span>{data.agentsBadge.rating}</span></div>
+            </div>
+          </motion.div>
         </div>
       </motion.div>
     </section>
