@@ -27,8 +27,13 @@
   font-weight: var(--fw-bold);
   font-size: var(--fs-h3);
   letter-spacing: -0.5px;
-  color: var(--text-main);
+  color: #0c1015; /* match the logo's deep dark blue */
   text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.logo:hover {
+  color: #F5C842; /* Investo Grow gold on hover */
 }
 
 .navContent {
