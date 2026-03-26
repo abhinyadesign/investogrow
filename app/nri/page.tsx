@@ -15,7 +15,7 @@ import { siteData } from "../../lib/data";
 export default function NRIPage() {
   return (
     <main>
-      <NRINavigation />
+      <NRINavigation solid />
       <NRIHero data={siteData.nri.hero} />
       <NRIStats />
       <NRIMarquee />

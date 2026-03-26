@@ -6,7 +6,7 @@ import { siteData } from "../../../lib/data";
 export default function NRIAboutPage() {
   return (
     <main>
-      <NRINavigation />
+      <NRINavigation solid />
       <div style={{ paddingTop: "80px" }}>
         <NRIAbout data={siteData.nri.about} />
       </div>

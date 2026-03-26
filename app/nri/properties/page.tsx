@@ -24,7 +24,7 @@ export default function NRIPropertiesPage() {
 
   return (
     <main>
-      <NRINavigation />
+      <NRINavigation solid />
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
       {/* Hero Banner */}

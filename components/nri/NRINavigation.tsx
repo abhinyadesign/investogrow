@@ -7,7 +7,7 @@ import { ArrowUpRight, Menu, X, ArrowLeft } from "lucide-react";
 import styles from "./NRINavigation.module.css";
 import ContactModal from "../ContactModal";
 
-export default function NRINavigation() {
+export default function NRINavigation({ solid }: { solid?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -21,7 +21,7 @@ export default function NRINavigation() {
   }, []);
 
   return (
-    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
+    <nav className={`${styles.nav} ${scrolled || solid ? styles.scrolled : ""}`}>
       <Link href="/nri" className={styles.logo}>
         <Image src="/logo.png" alt="Investo Grow" width={60} height={60} />
         <span className="gold-text">Investo Grow</span> | <span style={{fontSize: "0.85rem", fontWeight: 400, color: "var(--nri-text)"}}>NRI EXCLUSIVE</span>

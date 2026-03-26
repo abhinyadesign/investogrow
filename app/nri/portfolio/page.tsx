@@ -9,7 +9,7 @@ export const metadata = { title: "NRI Portfolio - Investo Grow" };
 export default function NRIPortfolioPage() {
   return (
     <main>
-      <NRINavigation />
+      <NRINavigation solid />
       <div style={{ paddingTop: "120px" }} />
       <NRICaseStudies />
       <NRIProcess />

@@ -25,11 +25,11 @@ export default function NRIPropertyDetailPage({ params }: { params: Promise<{ id
 
   return (
     <main>
-      <NRINavigation />
+      <NRINavigation solid />
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
       {/* FULL-WIDTH HERO IMAGE */}
-      <div style={{ position: "relative", width: "100%", height: "85vh", minHeight: "600px", marginTop: 0, overflow: "hidden" }}>
+      <div style={{ position: "relative", width: "100%", height: "calc(85vh - 90px)", minHeight: "510px", marginTop: "90px", overflow: "hidden" }}>
         <Image
           src={images[activeImage] || property.image}
           alt={property.title}
@@ -40,7 +40,7 @@ export default function NRIPropertyDetailPage({ params }: { params: Promise<{ id
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(15,14,23,0.2) 0%, rgba(15,14,23,0.8) 100%)" }} />
 
         {/* Navigation bar on top */}
-        <div style={{ position: "absolute", top: "80px", left: "5%", right: "5%", display: "flex", justifyContent: "space-between", alignItems: "center", zIndex: 10 }}>
+        <div style={{ position: "absolute", top: "32px", left: "5%", right: "5%", display: "flex", justifyContent: "space-between", alignItems: "center", zIndex: 10 }}>
           <Link href="/nri/properties" style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "#fff", backgroundColor: "rgba(28,27,42,0.8)", backdropFilter: "blur(10px)", padding: "10px 20px", borderRadius: "100px", fontWeight: 600, fontSize: "14px", border: "1px solid rgba(255,255,255,0.1)", textDecoration: "none" }}>
             <ArrowLeft size={16} /> Back to Properties
           </Link>

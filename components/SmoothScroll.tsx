@@ -1,9 +1,14 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
+import { usePathname, useSearchParams } from "next/navigation";
 import Lenis from "lenis";
 
 export default function SmoothScroll({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  const searchParams = useSearchParams();
+  const lenisRef = useRef<Lenis | null>(null);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -13,6 +18,8 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
       wheelMultiplier: 1,
       touchMultiplier: 1.5,
     });
+    
+    lenisRef.current = lenis;
 
     function raf(time: number) {
       lenis.raf(time);
@@ -27,8 +34,23 @@ export default function SmoothScroll({ children }: { children: React.ReactNode }
     return () => {
       cancelAnimationFrame(rafId);
       lenis.destroy();
+      lenisRef.current = null;
     };
   }, []);
+
+  // Handle scrolling to hash when route changes (e.g. from detail page to home anchor)
+  useEffect(() => {
+    if (window.location.hash && lenisRef.current) {
+      // Small timeout ensures the DOM has painted before scrolling
+      setTimeout(() => {
+        const id = window.location.hash.replace("#", "");
+        const element = document.getElementById(id);
+        if (element && lenisRef.current) {
+          lenisRef.current.scrollTo(element, { offset: -80 });
+        }
+      }, 100);
+    }
+  }, [pathname, searchParams]);
 
   return <>{children}</>;
 }
