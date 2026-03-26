@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import styles from "./Hero.module.css";
 import { motion } from "framer-motion";
@@ -33,13 +34,15 @@ export default function Hero({ data }: { data: any }) {
           {data.description}
         </p>
 
-        <button className={styles.exploreBtn}>
-          <span className={styles.dot}></span>
-          Explore Properties
-          <span className={styles.icon}>
-            <ArrowUpRight size={18} strokeWidth={2.5} />
-          </span>
-        </button>
+        <Link href="/properties" style={{ textDecoration: "none" }}>
+          <button className={styles.exploreBtn}>
+            <span className={styles.dot}></span>
+            Explore Properties
+            <span className={styles.icon}>
+              <ArrowUpRight size={18} strokeWidth={2.5} />
+            </span>
+          </button>
+        </Link>
 
         <div className={styles.statsRow}>
           {data.stats.map((stat: any, index: number) => (

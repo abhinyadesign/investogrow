@@ -8,6 +8,7 @@ import Testimonials from "@/components/Testimonials";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import OngoingProjects from "@/components/OngoingProjects";
 import { siteData } from "@/lib/data";
 import styles from "@/components/About.module.css";
 export default function Home() {
@@ -34,6 +35,7 @@ export default function Home() {
        </div>
       </section>
 
+      <OngoingProjects />
       <Services data={siteData.main.services} />
       <About data={siteData.main.about} />
       <Agents data={siteData.main.agents} />

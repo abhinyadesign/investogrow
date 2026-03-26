@@ -1,0 +1,81 @@
+.marqueeContainer {
+  width: 100%;
+  overflow: hidden;
+  background-color: var(--nri-bg-secondary);
+  border-top: 1px solid var(--nri-card-border);
+  border-bottom: 1px solid var(--nri-card-border);
+  padding: 1.5rem 0;
+  display: flex;
+  position: relative;
+}
+
+.marqueeTrack {
+  display: flex;
+  width: max-content;
+  animation: scroll 30s linear infinite;
+}
+
+.marqueeTrack:hover {
+  animation-play-state: paused;
+}
+
+.marqueeGroup {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  padding-right: 4rem;
+}
+
+.marqueeItem {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+  white-space: nowrap;
+}
+
+.text {
+  font-family: var(--font-geist-sans);
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  letter-spacing: 2px;
+  color: var(--nri-text);
+  opacity: 0.8;
+  text-transform: uppercase;
+}
+
+.icon {
+  color: var(--nri-accent);
+  opacity: 1;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-33.333333%);
+  }
+}
+
+@media (max-width: 768px) {
+  .marqueeContainer {
+    padding: 0.75rem 0;
+  }
+  .text {
+    font-size: var(--fs-p);
+  }
+  .marqueeGroup {
+    gap: 1.5rem;
+    padding-right: 1.5rem;
+  }
+  .marqueeItem {
+    gap: 1.5rem;
+  }
+  .icon {
+    width: 12px;
+    height: 12px;
+  }
+  .marqueeTrack {
+    animation-duration: 20s;
+  }
+}

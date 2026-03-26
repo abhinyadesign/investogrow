@@ -1,65 +1,50 @@
+"use client";
+
+import { useState } from "react";
 import styles from "./NRIProperties.module.css";
 import NRIPropertyCard from "./NRIPropertyCard";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
-
-// Keeping this for backwards compatibility if any other components still rely on it directly.
-// But we recommend passing data through props from lib/data.ts.
-export const dummyProperties = [
-  {
-    id: "prop-1",
-    image: "/images/Ho6IwoNLhdp9kCvS3CqnIvb0.jpg",
-    title: "Gold Coast Penthouse",
-    location: "Sector 150, Noida",
-    price: "₹7.5 Cr",
-    beds: 4,
-    baths: 4,
-    sqft: 4500,
-    badge: "Premium"
-  },
-  {
-    id: "prop-2",
-    image: "/images/Ho6IwoNLhdp9kCvS3CqnIvb0.jpg",
-    title: "The Imperial Villas",
-    location: "Sector 143, Noida",
-    price: "₹5.2 Cr",
-    beds: 3,
-    baths: 3,
-    sqft: 3200,
-    badge: "Hot Deal"
-  },
-  {
-    id: "prop-3",
-    image: "/images/Ho6IwoNLhdp9kCvS3CqnIvb0.jpg",
-    title: "Skyline Residences",
-    location: "Sector 128, Noida",
-    price: "₹9.8 Cr",
-    beds: 5,
-    baths: 5,
-    sqft: 6000,
-    badge: "Ultra Luxury"
-  }
-];
+import ContactModal from "../ContactModal";
+import NRIReveal from "./NRIReveal";
+import { siteData } from "../../lib/data";
 
 export default function NRIProperties({ data }: { data?: any[] }) {
-  const propertiesToRender = data || dummyProperties;
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  const propertiesToRender = data || (siteData.nri.properties as any[]);
 
   return (
     <section className={styles.section}>
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
       <div className={styles.container}>
-        <div className={styles.header}>
-          <div>
+        <NRIReveal direction="up">
+          <div style={{ textAlign: "center", marginBottom: "3rem" }}>
             <span className={styles.subtitle}>Curated Portfolio</span>
-            <h2 className={styles.title}>Exclusive Properties</h2>
+            <h2 className="two-tone-title" style={{ marginTop: "1rem" }}>
+              Exclusive <span>Properties</span>
+            </h2>
+            <p style={{ color: "var(--nri-text-muted)", maxWidth: "540px", margin: "0 auto 2rem", fontSize: "16px", lineHeight: 1.7 }}>
+              Handpicked RERA-verified properties in Noida's premium sectors, delivering 12–22% annual returns for NRI investors.
+            </p>
           </div>
-          <Link href="/nri/properties" className="gold-btn">
-            View All <ArrowRight size={18} />
-          </Link>
-        </div>
-        
+        </NRIReveal>
+
+        <NRIReveal direction="up" delay={60}>
+          <div style={{ display: "flex", justifyContent: "center", marginBottom: "3rem" }}>
+            <Link href="/nri/properties" className="coral-btn">
+              View All Properties <ArrowRight size={18} />
+            </Link>
+          </div>
+        </NRIReveal>
+
         <div className={styles.grid}>
           {propertiesToRender.map((prop: any, index: number) => (
-             <NRIPropertyCard key={index} {...prop} />
+            <NRIReveal key={index} direction="up" delay={index * 100}>
+              <NRIPropertyCard
+                {...prop}
+                onBook={() => setIsContactOpen(true)}
+              />
+            </NRIReveal>
           ))}
         </div>
       </div>

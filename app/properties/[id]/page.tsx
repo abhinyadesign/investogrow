@@ -1,142 +1,225 @@
+"use client";
+
+import { use, useState } from "react";
 import Image from "next/image";
-import Navigation from "@/components/Navigation";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { MapPin, Bed, Bath, Square, ArrowLeft, Shield, CheckCircle, TrendingUp, Clock, Building, ArrowRight, Star } from "lucide-react";
+import { siteData } from "../../../lib/data";
+import Navigation from "../../../components/Navigation";
+import ContactModal from "../../../components/ContactModal";
 import styles from "./PropertyDetail.module.css";
-import { MapPin, ArrowUpRight, CheckSquare, Tv, Wind, Wifi, Droplets, Refrigerator, Armchair, Shirt, MonitorPlay } from "lucide-react";
 
-export default async function PropertyPage(
-  props: {
-    params: Promise<{ id: string }>;
-  }
-) {
-  const params = await props.params;
-  const id = params.id;
+export default function PropertyDetailPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = use(params);
+  const property = (siteData.main.mainProperties.items as any[]).find(p => p.id === id);
+  const [isContactOpen, setIsContactOpen] = useState(false);
+  const [activeImage, setActiveImage] = useState(0);
 
-  // Derive mock data based on ID for visual cloning
-  const title = id.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
-  const price = id === "the-one" ? "690,000" : id === "billionaire-mansion" ? "500,000" : "290,000";
-  
+  if (!property) notFound();
+
+  const images = [property.image, property.imageSecondary].filter(Boolean);
+  const otherProperties = (siteData.main.mainProperties.items as any[]).filter(p => p.id !== id);
+
+  const statusColor = property.status === "For Sale" || property.status === "For Sell"
+    ? "#10B981"
+    : property.status === "For Rent"
+    ? "#3B82F6"
+    : "#F59E0B";
+
   return (
-    <main style={{ backgroundColor: "var(--background-secondary)", minHeight: "100vh" }}>
+    <main style={{ backgroundColor: "#FFFFFF", minHeight: "100vh" }}>
       <Navigation />
-      
-      <div className={styles.container}>
-        <div className={styles.gallery}>
-          <div className={styles.mainImage}>
-             <Image 
-               src="https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=2000"
-               alt="Property Main"
-               fill
-               className={styles.image}
-             />
+      <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
+
+      {/* ── HERO IMAGE ── */}
+      <div style={{ position: "relative", width: "100%", height: "80vh", minHeight: "560px", overflow: "hidden" }}>
+        <Image
+          src={images[activeImage] || property.image}
+          alt={property.title}
+          fill
+          style={{ objectFit: "cover" }}
+          priority
+        />
+        <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%)" }} />
+
+        {/* Back link */}
+        <div style={{ position: "absolute", top: "100px", left: "5%", right: "5%", display: "flex", justifyContent: "space-between", alignItems: "center", zIndex: 10 }}>
+          <Link href="/#properties" style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "#fff", backgroundColor: "rgba(255,255,255,0.15)", backdropFilter: "blur(10px)", padding: "10px 20px", borderRadius: "100px", fontWeight: 600, fontSize: "14px", border: "1px solid rgba(255,255,255,0.2)", textDecoration: "none" }}>
+            <ArrowLeft size={16} /> Back to Properties
+          </Link>
+          <span style={{ backgroundColor: statusColor, color: "#fff", padding: "8px 20px", borderRadius: "100px", fontSize: "13px", fontWeight: 700 }}>
+            {property.status}
+          </span>
+        </div>
+
+        {/* Title overlay */}
+        <div style={{ position: "absolute", bottom: "48px", left: "5%", right: "5%", zIndex: 10 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", color: "rgba(255,255,255,0.8)", marginBottom: "12px", fontSize: "15px" }}>
+            <MapPin size={16} color="#fff" /> {property.location}
           </div>
-          <div className={styles.subImage}>
-             <Image 
-               src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1000"
-               alt="Interior 1"
-               fill
-               className={styles.image}
-             />
-          </div>
-          <div className={styles.subImage}>
-             <Image 
-               src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=1000"
-               alt="Interior 2"
-               fill
-               className={styles.image}
-             />
+          <h1 style={{ fontSize: "clamp(36px,5vw,68px)", fontWeight: 800, color: "#fff", letterSpacing: "-0.04em", margin: 0, lineHeight: 1.05 }}>
+            {property.title}
+          </h1>
+          <div style={{ display: "flex", alignItems: "center", gap: "6px", marginTop: "12px" }}>
+            {[1,2,3,4,5].map(s => <Star key={s} size={14} color="#F5C842" fill="#F5C842" />)}
+            <span style={{ color: "rgba(255,255,255,0.8)", fontSize: "14px", marginLeft: "4px" }}>5.0 Premium Listing</span>
           </div>
         </div>
 
-        <div className={styles.contentWrapper}>
-          <div className={styles.mainContent}>
-            <h1 className={styles.title}>{title}</h1>
-            <div className={styles.location}>
-              <MapPin size={20} strokeWidth={2} />
-              Bel Air, LA
-            </div>
-
-            <p className={styles.description}>
-              Experience the pinnacle of luxury living in this architectural masterpiece. 
-              Designed with meticulous attention to detail, this residence offers breathtaking 
-              views, state-of-the-art amenities, and unparalleled craftsmanship. Expansive living 
-              spaces seamlessly blend indoor and outdoor environments, creating an entertainer's 
-              paradise. The gourmet chef's kitchen, opulent master suite, and resort-style pool 
-              elevate everyday living to an extraordinary experience.
-            </p>
-            <p className={styles.description}>
-              Every inch of this property has been curated for those who demand the absolute best. 
-              From the custom finishes to the smart home technology, no expense has been spared. 
-              Located in one of the most prestigious neighborhoods, this home promises privacy, 
-              security, and a life of absolute prestige.
-            </p>
-
-            {/* Features Section */}
-            <div className={styles.sectionBlock}>
-              <h2 className={styles.sectionTitle}>Features</h2>
-              <div className={styles.featuresList}>
-                <div className={styles.featureItem}><CheckSquare size={18} /> 6 Bedrooms & 4 Bathrooms</div>
-                <div className={styles.featureItem}><CheckSquare size={18} /> Bold Contemporary Design</div>
-                <div className={styles.featureItem}><CheckSquare size={18} /> Professionally Landscaped Garden</div>
-                <div className={styles.featureItem}><CheckSquare size={18} /> Spacious Driveway & Garage</div>
-                <div className={styles.featureItem}><CheckSquare size={18} /> Investment-Ready Property</div>
+        {/* Thumbnail switcher */}
+        {images.length > 1 && (
+          <div style={{ position: "absolute", bottom: "48px", right: "5%", display: "flex", gap: "10px", zIndex: 10 }}>
+            {images.map((img: string, i: number) => (
+              <div key={i} onClick={() => setActiveImage(i)}
+                style={{ width: "72px", height: "52px", borderRadius: "12px", overflow: "hidden", border: `2px solid ${i === activeImage ? "#F5C842" : "rgba(255,255,255,0.4)"}`, cursor: "pointer", position: "relative" }}>
+                <Image src={img} alt="" fill style={{ objectFit: "cover" }} />
               </div>
-            </div>
-
-            {/* Amenities Section */}
-            <div className={styles.sectionBlock}>
-              <h2 className={styles.sectionTitle}>Amenities</h2>
-              <div className={styles.amenitiesGrid}>
-                <div className={styles.amenityItem}><Tv size={16} /> TV</div>
-                <div className={styles.amenityItem}><Wind size={16} /> Air Conditioner</div>
-                <div className={styles.amenityItem}><MonitorPlay size={16} /> Washing Machine</div>
-                <div className={styles.amenityItem}><Wifi size={16} /> Internet</div>
-                <div className={styles.amenityItem}><Droplets size={16} /> Water Heater</div>
-                <div className={styles.amenityItem}><Refrigerator size={16} /> Refrigerator</div>
-                <div className={styles.amenityItem}><Armchair size={16} /> Sofa</div>
-                <div className={styles.amenityItem}><Shirt size={16} /> Wardrobe</div>
-              </div>
-            </div>
-
-            {/* Location Section */}
-            <div className={styles.sectionBlock}>
-              <h2 className={styles.sectionTitle}>Location</h2>
-              <div className={styles.mapContainer}>
-                 <iframe 
-                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105634.61811807693!2d-118.44196884999999!3d34.0937456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x80c2bc04d6d147ab%3A0xd6c7c379fd081ed1!2sBeverly%20Hills%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000!5m2!1sen!2sus" 
-                   width="100%" 
-                   height="400" 
-                   style={{ border: 0, borderRadius: '24px' }} 
-                   allowFullScreen={true} 
-                   loading="lazy" 
-                   referrerPolicy="no-referrer-when-downgrade"
-                 ></iframe>
-              </div>
-            </div>
+            ))}
           </div>
+        )}
+      </div>
 
-          <aside className={styles.sidebar}>
-            <div className={styles.sidebarInner}>
-              <div className={styles.priceTitle}>Property<br/>For Investment</div>
-              <div className={styles.price}>${price}</div>
-              <p className={styles.sidebarDesc}>Get in touch for more about this property</p>
-              
-              <div className={styles.agentsInfo}>
-                <div className={styles.agentsAvatars}>
-                  {[1,2,3,4].map((i) => (
-                    <div key={i} className={styles.avatar} style={{ backgroundImage: `url(https://i.pravatar.cc/100?img=${i+40})` }} />
+      {/* ── MAIN CONTENT ── */}
+      <section style={{ backgroundColor: "#FFFFFF", padding: "60px 5%" }}>
+        <div style={{ maxWidth: "1400px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 380px", gap: "60px", alignItems: "start" }}>
+
+          {/* LEFT */}
+          <div>
+            {/* Stats Strip */}
+            <div className={styles.statsStrip}>
+              {[
+                { icon: Bed, label: "Bedrooms", value: property.beds },
+                { icon: Bath, label: "Bathrooms", value: property.baths },
+                { icon: Square, label: "Sq. Ft.", value: property.sqft?.toLocaleString() },
+                { icon: Clock, label: "Possession", value: property.possession || "On Request" },
+              ].map(({ icon: Icon, label, value }, i, arr) => (
+                <div key={label} className={styles.statItem} style={{ borderRight: i < arr.length - 1 ? "1px solid #F0F0F0" : "none" }}>
+                  <Icon size={22} color="#0c1015" style={{ marginBottom: "8px" }} />
+                  <div style={{ fontSize: "24px", fontWeight: 800, color: "#0c1015", letterSpacing: "-0.5px" }}>{value}</div>
+                  <div style={{ fontSize: "12px", color: "#8a93a2", textTransform: "uppercase", letterSpacing: "1px", marginTop: "4px" }}>{label}</div>
+                </div>
+              ))}
+            </div>
+
+            {/* Description */}
+            <div className={styles.section}>
+              <span className={styles.sectionLabel}>About This Property</span>
+              <h2 className={styles.sectionTitle}>Property <span style={{ color: "#0c1015" }}>Overview</span></h2>
+              <p style={{ color: "#6b7280", lineHeight: 1.8, fontSize: "17px" }}>{property.description}</p>
+            </div>
+
+            {/* Key Highlights */}
+            {property.highlights && (
+              <div className={styles.section}>
+                <span className={styles.sectionLabel}>Key Highlights</span>
+                <h2 className={styles.sectionTitle}>What Makes It <span>Special</span></h2>
+                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
+                  {property.highlights.map((h: string) => (
+                    <div key={h} className={styles.featureCard}>
+                      <CheckCircle size={18} color="#0c1015" style={{ flexShrink: 0, marginTop: "1px" }} />
+                      <span style={{ color: "#4b5563", fontSize: "15px", lineHeight: 1.5 }}>{h}</span>
+                    </div>
                   ))}
                 </div>
-                <strong className={styles.agentsText}>10+ Featured Agents</strong>
-                <div className={styles.rating}>★★★★★ <span>5 / 5</span></div>
+              </div>
+            )}
+
+            {/* Amenities */}
+            {property.amenities && (
+              <div className={styles.section}>
+                <span className={styles.sectionLabel}>Lifestyle Amenities</span>
+                <h2 className={styles.sectionTitle}>World-Class <span>Amenities</span></h2>
+                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "12px" }}>
+                  {property.amenities.map((a: string) => (
+                    <div key={a} className={styles.amenityChip}>
+                      <span style={{ color: "#0c1015", fontSize: "16px" }}>✦</span> {a}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Info Grid */}
+            <div className={styles.section}>
+              <span className={styles.sectionLabel}>Property Details</span>
+              <h2 className={styles.sectionTitle}>Property <span>Information</span></h2>
+              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                {[
+                  { icon: Building, label: "Developer", value: property.developer || "Premium Developer" },
+                  { icon: Shield, label: "Status", value: property.status || "Verified" },
+                  { icon: TrendingUp, label: "Investment Potential", value: "High ROI" },
+                  { icon: Clock, label: "Possession", value: property.possession || "On Request" },
+                ].map(({ icon: Icon, label, value }) => (
+                  <div key={label} className={styles.infoCard}>
+                    <div className={styles.infoIcon}>
+                      <Icon size={20} color="#0c1015" />
+                    </div>
+                    <div>
+                      <div style={{ fontSize: "12px", color: "#8a93a2", textTransform: "uppercase", letterSpacing: "1px" }}>{label}</div>
+                      <div style={{ color: "#0c1015", fontWeight: 700, fontSize: "15px", marginTop: "4px" }}>{value}</div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* RIGHT: Sticky Sidebar */}
+          <div style={{ position: "sticky", top: "100px" }}>
+            <div className={styles.sidebar}>
+              <div style={{ fontSize: "36px", fontWeight: 800, color: "#0c1015", letterSpacing: "-2px", marginBottom: "4px" }}>
+                ${property.price}
+              </div>
+              <p style={{ color: "#8a93a2", fontSize: "14px", marginBottom: "28px" }}>All-inclusive price · No hidden charges</p>
+
+              <div style={{ display: "flex", flexDirection: "column", gap: "12px", marginBottom: "28px" }}>
+                <button onClick={() => setIsContactOpen(true)} className={styles.primaryBtn}>
+                  Schedule a Viewing <ArrowRight size={16} />
+                </button>
+                <button onClick={() => setIsContactOpen(true)} className={styles.outlineBtn}>
+                  Request More Info
+                </button>
               </div>
 
-              <button className={styles.requestBtn}>
-                Request Info
-              </button>
+              <div style={{ borderTop: "1px solid #F0F0F0", paddingTop: "24px", display: "flex", flexDirection: "column", gap: "14px" }}>
+                {[
+                  { icon: Shield, text: "Verified Listing" },
+                  { icon: TrendingUp, text: "High ROI Potential" },
+                  { icon: CheckCircle, text: "Direct — No Middlemen" },
+                ].map(({ icon: Icon, text }) => (
+                  <div key={text} style={{ display: "flex", alignItems: "center", gap: "10px", color: "#6b7280", fontSize: "14px" }}>
+                    <Icon size={16} color="#0c1015" /> {text}
+                  </div>
+                ))}
+              </div>
             </div>
-          </aside>
+
+            {/* Other properties */}
+            <div className={styles.otherProps}>
+              <p style={{ color: "#8a93a2", fontSize: "13px", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "16px" }}>
+                Similar Properties
+              </p>
+              <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+                {otherProperties.map((p: any) => (
+                  <Link key={p.id} href={`/properties/${p.id}`} className={styles.otherPropLink}>
+                    <div style={{ width: "60px", height: "48px", borderRadius: "10px", overflow: "hidden", position: "relative", flexShrink: 0 }}>
+                      <Image src={p.image} alt={p.title} fill style={{ objectFit: "cover" }} />
+                    </div>
+                    <div>
+                      <div style={{ color: "#0c1015", fontWeight: 600, fontSize: "14px" }}>{p.title}</div>
+                      <div style={{ color: "#8a93a2", fontSize: "13px", marginTop: "2px" }}>{p.location}</div>
+                      <div style={{ color: "#0c1015", fontSize: "13px", fontWeight: 700, marginTop: "2px" }}>${p.price}</div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
+
+        <style>{`@media (max-width: 900px) { section > div { grid-template-columns: 1fr !important; } section > div > div:last-child { position: static !important; } }`}</style>
+      </section>
     </main>
   );
 }

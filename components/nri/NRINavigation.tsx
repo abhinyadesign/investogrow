@@ -30,18 +30,19 @@ export default function NRINavigation() {
       <div className={`${styles.navContent} ${mobileMenuOpen ? styles.mobileOpen : ""}`}>
         <ul className={styles.links}>
           <li><Link href="/nri" className={styles.link} onClick={() => setMobileMenuOpen(false)}>Home</Link></li>
-          <li><Link href="/nri/properties" className={styles.link} onClick={() => setMobileMenuOpen(false)}>Premium Properties</Link></li>
+          <li><Link href="/nri/properties" className={styles.link} onClick={() => setMobileMenuOpen(false)}>Properties</Link></li>
+          <li><Link href="/nri/portfolio" className={styles.link} onClick={() => setMobileMenuOpen(false)}>Portfolio</Link></li>
+          <li><Link href="/nri/plans" className={styles.link} onClick={() => setMobileMenuOpen(false)}>Investment Plans</Link></li>
           <li><Link href="/nri/about" className={styles.link} onClick={() => setMobileMenuOpen(false)}>About Us</Link></li>
           <li>
             <Link href="/" className={styles.link} style={{ display: "flex", alignItems: "center", gap: "0.25rem", color: "var(--nri-text-muted)" }}>
-              <ArrowLeft size={14} /> Back to Main Site
+              <ArrowLeft size={14} /> Main Site
             </Link>
           </li>
         </ul>
 
-        <button className={styles.contactBtn} onClick={() => setIsContactModalOpen(true)}>
-          Request Consultation
-          <ArrowUpRight size={16} strokeWidth={2.5} />
+        <button className="coral-btn" onClick={() => setIsContactModalOpen(true)}>
+          Free Consultation <ArrowUpRight size={16} strokeWidth={2.5} />
         </button>
       </div>
 
