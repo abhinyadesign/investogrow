@@ -81,8 +81,8 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
       </div>
 
       {/* ── MAIN CONTENT ── */}
-      <section style={{ backgroundColor: "#FFFFFF", padding: "60px 5%" }}>
-        <div style={{ maxWidth: "1400px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 380px", gap: "60px", alignItems: "start" }}>
+      <section style={{ backgroundColor: "#FFFFFF", padding: "60px 0" }}>
+        <div className={styles.pageGrid}>
 
           {/* LEFT */}
           <div>
@@ -114,7 +114,7 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
               <div className={styles.section}>
                 <span className={styles.sectionLabel}>Key Highlights</span>
                 <h2 className={styles.sectionTitle}>What Makes It <span>Special</span></h2>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
+                <div className={styles.featuresGrid}>
                   {property.highlights.map((h: string) => (
                     <div key={h} className={styles.featureCard}>
                       <CheckCircle size={18} color="#0c1015" style={{ flexShrink: 0, marginTop: "1px" }} />
@@ -130,7 +130,7 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
               <div className={styles.section}>
                 <span className={styles.sectionLabel}>Lifestyle Amenities</span>
                 <h2 className={styles.sectionTitle}>World-Class <span>Amenities</span></h2>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "12px" }}>
+                <div className={styles.amenitiesGrid}>
                   {property.amenities.map((a: string) => (
                     <div key={a} className={styles.amenityChip}>
                       <span style={{ color: "#0c1015", fontSize: "16px" }}>✦</span> {a}
@@ -144,7 +144,7 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
             <div className={styles.section}>
               <span className={styles.sectionLabel}>Property Details</span>
               <h2 className={styles.sectionTitle}>Property <span>Information</span></h2>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+              <div className={styles.infoGrid}>
                 {[
                   { icon: Building, label: "Developer", value: property.developer || "Premium Developer" },
                   { icon: Shield, label: "Status", value: property.status || "Verified" },
@@ -166,7 +166,7 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
           </div>
 
           {/* RIGHT: Sticky Sidebar */}
-          <div style={{ position: "sticky", top: "100px" }}>
+          <div className={styles.sidebarWrapper}>
             <div className={styles.sidebar}>
               <div style={{ fontSize: "36px", fontWeight: 800, color: "#0c1015", letterSpacing: "-2px", marginBottom: "4px" }}>
                 ${property.price}
@@ -218,7 +218,6 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
           </div>
         </div>
 
-        <style>{`@media (max-width: 900px) { section > div { grid-template-columns: 1fr !important; } section > div > div:last-child { position: static !important; } }`}</style>
       </section>
     </main>
   );

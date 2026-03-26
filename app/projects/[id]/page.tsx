@@ -79,8 +79,8 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
       </div>
 
       {/* ── MAIN CONTENT ── */}
-      <section style={{ backgroundColor: "#fff", padding: "60px 5%", position: "relative" }} >
-        <div style={{ maxWidth: "1400px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 380px", gap: "60px", alignItems: "start" }}>
+      <section style={{ backgroundColor: "#fff", padding: "60px 0", position: "relative" }} >
+        <div className={styles.pageGrid} style={{ padding: "0 5%" }}>
 
           {/* LEFT */}
           <div>
@@ -112,7 +112,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
               <div className={styles.section}>
                 <span className={styles.sectionLabel}>Project Highlights</span>
                 <h2 className={styles.sectionTitle}>What Makes It <span>Unique</span></h2>
-                <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "14px" }}>
+                <div className={styles.featuresGrid}>
                   {project.highlights.map((h: string) => (
                     <div key={h} className={styles.featureCard}>
                       <CheckCircle size={18} color="#0c1015" style={{ flexShrink: 0, marginTop: "1px" }} />
@@ -128,7 +128,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
               <div className={styles.section}>
                 <span className={styles.sectionLabel}>World-Class Amenities</span>
                 <h2 className={styles.sectionTitle}>Lifestyle <span>Amenities</span></h2>
-                <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "12px" }}>
+                <div className={styles.amenitiesGrid}>
                   {project.amenities.map((a: string) => (
                     <div key={a} className={styles.amenityChip}>
                       <span style={{ color: "#0c1015", fontSize: "16px" }}>✦</span> {a}
@@ -142,7 +142,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
             <div className={styles.section}>
               <span className={styles.sectionLabel}>Project Details</span>
               <h2 className={styles.sectionTitle}>Project <span>Information</span></h2>
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+              <div className={styles.infoGrid}>
                 {[
                   { icon: Building2, label: "Developer", value: project.developer },
                   { icon: Shield, label: "RERA Number", value: project.rera },
@@ -162,7 +162,7 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
           </div>
 
           {/* RIGHT: Sticky Sidebar */}
-          <div style={{ position: "sticky", top: "100px" }}>
+          <div className={styles.sidebarWrapper}>
             <div className={styles.sidebar}>
               <div style={{ fontSize: "13px", color: "#8a93a2", textTransform: "uppercase", letterSpacing: "1px", marginBottom: "4px" }}>Starting From</div>
               <div style={{ fontSize: "36px", fontWeight: 800, color: "#0c1015", letterSpacing: "-2px", marginBottom: "4px" }}>
@@ -214,7 +214,6 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
             )}
           </div>
         </div>
-        <style>{`@media (max-width: 900px) { section > div { grid-template-columns: 1fr !important; } section > div > div:last-child { position: static !important; } }`}</style>
       </section>
     </main>
   );

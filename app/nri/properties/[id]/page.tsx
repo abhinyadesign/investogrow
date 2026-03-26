@@ -11,6 +11,7 @@ import NRICTA from "../../../../components/nri/NRICTA";
 import ContactModal from "../../../../components/ContactModal";
 import NRIReveal from "../../../../components/nri/NRIReveal";
 import { notFound } from "next/navigation";
+import styles from "./NRIPropertyDetail.module.css";
 
 export default function NRIPropertyDetailPage({ params }: { params: Promise<{ id: string }> }) {
   const { id } = use(params);
@@ -76,20 +77,20 @@ export default function NRIPropertyDetailPage({ params }: { params: Promise<{ id
 
       {/* MAIN CONTENT */}
       <section style={{ backgroundColor: "var(--nri-bg)", padding: "60px 5%" }}>
-        <div style={{ maxWidth: "1400px", margin: "0 auto", display: "grid", gridTemplateColumns: "1fr 380px", gap: "60px", alignItems: "start" }}>
+        <div className={styles.pageGrid}>
 
           {/* LEFT: Property details */}
           <div>
             {/* Quick stats strip */}
             <NRIReveal direction="up">
-              <div style={{ display: "flex", gap: "0", backgroundColor: "var(--nri-card-bg)", border: "1px solid var(--nri-card-border)", borderRadius: "20px", overflow: "hidden", marginBottom: "48px" }}>
+              <div className={styles.statsRow}>
                 {[
                   { icon: Bed, label: "Bedrooms", value: property.beds },
                   { icon: Bath, label: "Bathrooms", value: property.baths },
                   { icon: Square, label: "Sq. Ft.", value: property.sqft.toLocaleString() },
                   { icon: Clock, label: "Possession", value: property.possession || "On Request" },
                 ].map(({ icon: Icon, label, value }, i, arr) => (
-                  <div key={label} style={{ flex: 1, padding: "24px", textAlign: "center", borderRight: i < arr.length - 1 ? "1px solid var(--nri-card-border)" : "none" }}>
+                  <div key={label} className={styles.statCell}>
                     <Icon size={22} color="var(--nri-accent)" style={{ marginBottom: "8px" }} />
                     <div style={{ fontSize: "24px", fontWeight: 800, color: "#fff", letterSpacing: "-0.5px" }}>{value}</div>
                     <div style={{ fontSize: "12px", color: "var(--nri-text-muted)", textTransform: "uppercase", letterSpacing: "1px", marginTop: "4px" }}>{label}</div>
@@ -113,7 +114,7 @@ export default function NRIPropertyDetailPage({ params }: { params: Promise<{ id
                 <div style={{ marginBottom: "48px" }}>
                   <span className="nri-label">Key Highlights</span>
                   <h2 className="two-tone-title" style={{ marginBottom: "24px" }}>What Makes It <span>Special</span></h2>
-                  <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "16px" }}>
+                  <div className={styles.highlightsGrid}>
                     {property.highlights.map((h: string) => (
                       <div key={h} style={{ display: "flex", alignItems: "flex-start", gap: "12px", backgroundColor: "var(--nri-card-bg)", border: "1px solid var(--nri-card-border)", borderRadius: "16px", padding: "18px 20px" }}>
                         <CheckCircle size={18} color="var(--nri-accent)" style={{ flexShrink: 0, marginTop: "1px" }} />
@@ -131,7 +132,7 @@ export default function NRIPropertyDetailPage({ params }: { params: Promise<{ id
                 <div style={{ marginBottom: "48px" }}>
                   <span className="nri-label">World-Class Amenities</span>
                   <h2 className="two-tone-title" style={{ marginBottom: "24px" }}>Lifestyle <span>Amenities</span></h2>
-                  <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(200px, 1fr))", gap: "12px" }}>
+                  <div className={styles.amenitiesGrid}>
                     {property.amenities.map((a: string) => (
                       <div key={a} style={{ backgroundColor: "var(--nri-card-bg)", border: "1px solid var(--nri-card-border)", borderRadius: "12px", padding: "14px 18px", color: "var(--nri-text-muted)", fontSize: "14px", display: "flex", alignItems: "center", gap: "10px", transition: "border-color 0.2s ease" }}
                         onMouseEnter={e => (e.currentTarget.style.borderColor = "rgba(245,200,66,0.3)")}
@@ -147,7 +148,7 @@ export default function NRIPropertyDetailPage({ params }: { params: Promise<{ id
 
             {/* Developer & RERA */}
             <NRIReveal direction="up">
-              <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: "20px" }}>
+              <div className={styles.infoGrid}>
                 {[
                   { icon: Building, label: "Developer", value: property.developer || "Premium Developer" },
                   { icon: Shield, label: "RERA Number", value: property.rera || "Verified" },
@@ -169,7 +170,7 @@ export default function NRIPropertyDetailPage({ params }: { params: Promise<{ id
           </div>
 
           {/* RIGHT: Sticky Sidebar */}
-          <div style={{ position: "sticky", top: "100px" }}>
+          <div className={styles.sidebarWrapper}>
             <NRIReveal direction="right">
               <div style={{ backgroundColor: "var(--nri-card-bg)", border: "1px solid var(--nri-card-border)", borderRadius: "28px", padding: "36px", boxShadow: "0 20px 60px rgba(0,0,0,0.4)" }}>
                 <div style={{ fontSize: "36px", fontWeight: 800, color: "var(--nri-accent)", letterSpacing: "-2px", marginBottom: "4px" }}>{property.price}</div>
@@ -223,13 +224,7 @@ export default function NRIPropertyDetailPage({ params }: { params: Promise<{ id
           </div>
         </div>
 
-        {/* @media: Stack on mobile */}
-        <style>{`
-          @media (max-width: 900px) {
-            section > div > div { grid-template-columns: 1fr !important; }
-            section > div > div > div:last-child { position: static !important; }
-          }
-        `}</style>
+
       </section>
 
       <NRICTA />
