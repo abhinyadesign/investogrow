@@ -25,16 +25,16 @@ export default function ProjectDetailPage({ params }: { params: Promise<{ id: st
 
   return (
     <main style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
-      <Navigation />
+      <Navigation solid />
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
       {/* ── HERO IMAGE ── */}
-      <div style={{ position: "relative", width: "100%", height: "80vh", minHeight: "560px", overflow: "hidden" }}>
+      <div style={{ position: "relative", width: "100%", height: "calc(80vh - 80px)", minHeight: "560px", marginTop: "80px", overflow: "hidden" }}>
         <Image src={images[activeImage] || project.image} alt={project.title} fill style={{ objectFit: "cover" }} priority />
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.65) 100%)" }} />
 
         {/* Top nav */}
-        <div style={{ position: "absolute", top: "100px", left: "5%", right: "5%", display: "flex", justifyContent: "space-between", alignItems: "center", zIndex: 10 }}>
+        <div style={{ position: "absolute", top: "32px", left: "5%", right: "5%", display: "flex", justifyContent: "space-between", alignItems: "center", zIndex: 10 }}>
           <Link href="/projects" style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "#fff", backgroundColor: "rgba(255,255,255,0.15)", backdropFilter: "blur(10px)", padding: "10px 20px", borderRadius: "100px", fontWeight: 600, fontSize: "14px", border: "1px solid rgba(255,255,255,0.2)", textDecoration: "none" }}>
             <ArrowLeft size={16} /> All Projects
           </Link>

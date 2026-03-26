@@ -22,7 +22,7 @@ export default function ProjectsListingPage() {
 
   return (
     <main style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
-      <Navigation />
+      <Navigation solid />
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
       {/* Header */}

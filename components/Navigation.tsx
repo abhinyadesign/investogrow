@@ -7,7 +7,7 @@ import Image from "next/image";
 import styles from "./Navigation.module.css";
 import ContactModal from "./ContactModal";
 
-export default function Navigation() {
+export default function Navigation({ solid }: { solid?: boolean }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
@@ -21,7 +21,7 @@ export default function Navigation() {
   }, []);
 
   return (
-    <nav className={`${styles.nav} ${scrolled ? styles.scrolled : ""}`}>
+    <nav className={`${styles.nav} ${scrolled || solid ? styles.scrolled : ""}`}>
       <Link href="/" className={styles.logo}>
         <Image src="/logo.png" alt="Investo Grow" width={60} height={60} />
         Investo Grow

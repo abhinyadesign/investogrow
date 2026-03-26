@@ -21,7 +21,7 @@ export default function PropertiesPage() {
 
   return (
     <main style={{ backgroundColor: "#fff", minHeight: "100vh" }}>
-      <Navigation />
+      <Navigation solid />
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
       {/* Header */}

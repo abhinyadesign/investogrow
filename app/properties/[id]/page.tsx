@@ -29,11 +29,11 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
 
   return (
     <main style={{ backgroundColor: "#FFFFFF", minHeight: "100vh" }}>
-      <Navigation />
+      <Navigation solid />
       <ContactModal isOpen={isContactOpen} onClose={() => setIsContactOpen(false)} />
 
       {/* ── HERO IMAGE ── */}
-      <div style={{ position: "relative", width: "100%", height: "80vh", minHeight: "560px", overflow: "hidden" }}>
+      <div style={{ position: "relative", width: "100%", height: "calc(80vh - 80px)", minHeight: "560px", marginTop: "80px", overflow: "hidden" }}>
         <Image
           src={images[activeImage] || property.image}
           alt={property.title}
@@ -44,7 +44,7 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
         <div style={{ position: "absolute", inset: 0, background: "linear-gradient(to bottom, rgba(0,0,0,0.15) 0%, rgba(0,0,0,0.55) 100%)" }} />
 
         {/* Back link */}
-        <div style={{ position: "absolute", top: "100px", left: "5%", right: "5%", display: "flex", justifyContent: "space-between", alignItems: "center", zIndex: 10 }}>
+        <div style={{ position: "absolute", top: "32px", left: "5%", right: "5%", display: "flex", justifyContent: "space-between", alignItems: "center", zIndex: 10 }}>
           <Link href="/#properties" style={{ display: "inline-flex", alignItems: "center", gap: "8px", color: "#fff", backgroundColor: "rgba(255,255,255,0.15)", backdropFilter: "blur(10px)", padding: "10px 20px", borderRadius: "100px", fontWeight: 600, fontSize: "14px", border: "1px solid rgba(255,255,255,0.2)", textDecoration: "none" }}>
             <ArrowLeft size={16} /> Back to Properties
           </Link>
