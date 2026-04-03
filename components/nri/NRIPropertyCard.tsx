@@ -11,15 +11,17 @@ interface PropertyProps {
   title: string;
   location: string;
   price: string;
-  beds: number;
-  baths: number;
-  sqft: number;
+  beds: number | string;
+  bedsLabel?: string;
+  baths: number | string;
+  bathsLabel?: string;
+  sqft: number | string;
   badge?: string;
   roi?: string;
   onBook?: () => void;
 }
 
-export default function NRIPropertyCard({ id, image, title, location, price, beds, baths, sqft, badge, roi = "+15% ROI", onBook }: PropertyProps) {
+export default function NRIPropertyCard({ id, image, title, location, price, beds, bedsLabel, baths, bathsLabel, sqft, badge, roi = "+15% ROI", onBook }: PropertyProps) {
   return (
     <div className={styles.card}>
 
@@ -68,9 +70,9 @@ export default function NRIPropertyCard({ id, image, title, location, price, bed
           <MapPin size={14} /> {location}
         </div>
         <div className={styles.features}>
-          <span className={styles.feature}><Bed size={14} /> {beds} Beds</span>
-          <span className={styles.feature}><Bath size={14} /> {baths} Baths</span>
-          <span className={styles.feature}><Square size={14} /> {sqft} sqft</span>
+          <span className={styles.feature}><Bed size={14} /> {beds} {bedsLabel || "Beds"}</span>
+          <span className={styles.feature}><Bath size={14} /> {baths} {bathsLabel || "Baths"}</span>
+          <span className={styles.feature}><Square size={14} /> {typeof sqft === 'number' ? sqft.toLocaleString() : sqft} sqft</span>
         </div>
 
         <div style={{ display: "flex", gap: "10px", marginTop: "18px" }}>

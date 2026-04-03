@@ -59,9 +59,9 @@ export default function Hero({ data }: { data: any }) {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <div className={styles.badgeAvatars}>
-              {data.agentsBadge.avatars.map((avatar: number, i: number) => (
+              {data.agentsBadge.avatars.map((avatar: string, i: number) => (
                 <div key={i} className={styles.avatarCircle} style={{
-                  backgroundImage: `url(https://i.pravatar.cc/100?img=${avatar})`,
+                  backgroundImage: `url(${avatar})`,
                 }} />
               ))}
             </div>

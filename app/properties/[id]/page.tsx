@@ -89,9 +89,9 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
             {/* Stats Strip */}
             <div className={styles.statsStrip}>
               {[
-                { icon: Bed, label: "Bedrooms", value: property.beds },
-                { icon: Bath, label: "Bathrooms", value: property.baths },
-                { icon: Square, label: "Sq. Ft.", value: property.sqft?.toLocaleString() },
+                { icon: Bed, label: property.bedsLabel || "Bedrooms", value: property.beds },
+                { icon: Bath, label: property.bathsLabel || "Bathrooms", value: property.baths },
+                { icon: Square, label: "Sq. Ft.", value: typeof property.sqft === 'number' ? property.sqft.toLocaleString() : property.sqft },
                 { icon: Clock, label: "Possession", value: property.possession || "On Request" },
               ].map(({ icon: Icon, label, value }, i, arr) => (
                 <div key={label} className={styles.statItem} style={{ borderRight: i < arr.length - 1 ? "1px solid #F0F0F0" : "none" }}>
@@ -169,7 +169,7 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
           <div className={styles.sidebarWrapper}>
             <div className={styles.sidebar}>
               <div style={{ fontSize: "36px", fontWeight: 800, color: "#0c1015", letterSpacing: "-2px", marginBottom: "4px" }}>
-                ${property.price}
+                ₹ {property.price}
               </div>
               <p style={{ color: "#8a93a2", fontSize: "14px", marginBottom: "28px" }}>All-inclusive price · No hidden charges</p>
 
@@ -209,7 +209,7 @@ export default function PropertyDetailPage({ params }: { params: Promise<{ id: s
                     <div>
                       <div style={{ color: "#0c1015", fontWeight: 600, fontSize: "14px" }}>{p.title}</div>
                       <div style={{ color: "#8a93a2", fontSize: "13px", marginTop: "2px" }}>{p.location}</div>
-                      <div style={{ color: "#0c1015", fontSize: "13px", fontWeight: 700, marginTop: "2px" }}>${p.price}</div>
+                      <div style={{ color: "#0c1015", fontSize: "13px", fontWeight: 700, marginTop: "2px" }}>₹ {p.price}</div>
                     </div>
                   </Link>
                 ))}

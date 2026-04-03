@@ -15,9 +15,9 @@ export default function Footer() {
               </div>
               
               <div className={styles.brandContact}>
-                 <p>+1-800-555-1234</p>
+                 <p>+91 (0) 999 000 1234</p>
                  <p>info@investogrow.com</p>
-                 <p>123 Serenity Boulevard, Greenwood Heights, NY 11222, United States</p>
+                 <p>Sector-140, Noida-Greater Noida Expressway, Uttar Pradesh 201305</p>
               </div>
            </div>
            

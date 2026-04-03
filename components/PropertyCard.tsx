@@ -12,10 +12,12 @@ export interface Property {
   status: string;
   location: string;
   title: string;
-  beds: number;
-  baths: number;
-  sqft: number;
+  beds: number | string;
+  baths: number | string;
+  sqft: number | string;
   price: string;
+  bedsLabel?: string;
+  bathsLabel?: string;
 }
 
 export default function PropertyCard({ property, index }: { property: Property, index: number }) {
@@ -46,18 +48,18 @@ export default function PropertyCard({ property, index }: { property: Property, 
           
           <div className={styles.specs}>
             <div className={styles.specItem}>
-              <BedDouble size={18} strokeWidth={1.5} /> {property.beds}
+              <BedDouble size={18} strokeWidth={1.5} /> {property.beds} {property.bedsLabel || ""}
             </div>
             <div className={styles.specItem}>
-              <Bath size={18} strokeWidth={1.5} /> {property.baths}
+              <Bath size={18} strokeWidth={1.5} /> {property.baths} {property.bathsLabel || ""}
             </div>
             <div className={styles.specItem}>
-              <SquareSquare size={18} strokeWidth={1.5} /> {property.sqft.toLocaleString()} sq.ft
+              <SquareSquare size={18} strokeWidth={1.5} /> {typeof property.sqft === 'number' ? property.sqft.toLocaleString() : property.sqft} sq.ft
             </div>
           </div>
           
           <div className={styles.price}>
-            $ {property.price}
+            ₹ {property.price}
           </div>
         </div>
       </Link>

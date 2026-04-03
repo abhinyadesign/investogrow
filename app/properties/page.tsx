@@ -32,7 +32,7 @@ export default function PropertiesPage() {
             Premium Properties
           </h1>
           <p style={{ color: "#6b7280", fontSize: "18px", maxWidth: "560px", lineHeight: 1.7, marginBottom: "36px" }}>
-            Handpicked luxury properties — from iconic LA estates to Beverly Hills classics — ready to buy, rent, or invest.
+            Handpicked premium commercial and retail properties — from iconic high-street shops to state-of-the-art office suites in Noida.
           </p>
 
           {/* Search bar */}
@@ -82,7 +82,7 @@ export default function PropertiesPage() {
                 {/* Content */}
                 <div style={{ padding: "24px" }}>
                   <div style={{ display: "flex", justifyContent: "space-between", alignItems: "flex-start", marginBottom: "8px" }}>
-                    <div style={{ fontSize: "22px", fontWeight: 800, color: "#0c1015", letterSpacing: "-0.5px" }}>${prop.price}</div>
+                    <div style={{ fontSize: "22px", fontWeight: 800, color: "#0c1015", letterSpacing: "-0.5px" }}>₹ {prop.price}</div>
                   </div>
                   <Link href={`/properties/${prop.id}`} style={{ textDecoration: "none" }}>
                     <h3 style={{ fontSize: "18px", fontWeight: 700, color: "#0c1015", marginBottom: "8px", cursor: "pointer" }}>{prop.title}</h3>
@@ -91,9 +91,9 @@ export default function PropertiesPage() {
                     <MapPin size={14} /> {prop.location}
                   </div>
                   <div style={{ display: "flex", gap: "16px", color: "#6b7280", fontSize: "13px", paddingTop: "16px", borderTop: "1px solid #F0F0F0" }}>
-                    <span style={{ display: "flex", alignItems: "center", gap: "5px" }}><Bed size={14} /> {prop.beds} Beds</span>
-                    <span style={{ display: "flex", alignItems: "center", gap: "5px" }}><Bath size={14} /> {prop.baths} Baths</span>
-                    <span style={{ display: "flex", alignItems: "center", gap: "5px" }}><Square size={14} /> {prop.sqft?.toLocaleString()} sqft</span>
+                    <span style={{ display: "flex", alignItems: "center", gap: "5px" }}><Bed size={14} /> {prop.beds} {prop.bedsLabel || "Beds"}</span>
+                    <span style={{ display: "flex", alignItems: "center", gap: "5px" }}><Bath size={14} /> {prop.baths} {prop.bathsLabel || "Baths"}</span>
+                    <span style={{ display: "flex", alignItems: "center", gap: "5px" }}><Square size={14} /> {typeof prop.sqft === 'number' ? prop.sqft.toLocaleString() : prop.sqft} sqft</span>
                   </div>
                   <div style={{ display: "flex", gap: "10px", marginTop: "16px" }}>
                     <Link href={`/properties/${prop.id}`} style={{ flex: 1, display: "flex", alignItems: "center", justifyContent: "center", gap: "8px", backgroundColor: "#0c1015", color: "#fff", borderRadius: "100px", padding: "12px", fontWeight: 700, fontSize: "14px", textDecoration: "none" }}>

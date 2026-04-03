@@ -36,7 +36,7 @@ export default function About({ data }: { data: any }) {
                  src={data.founder.image} 
                  alt="Founder"
                  fill
-                 style={{ objectFit: 'cover' }}
+                 style={{ objectFit: 'contain' }}
                />
             </div>
           </div>

@@ -85,9 +85,9 @@ export default function NRIPropertyDetailPage({ params }: { params: Promise<{ id
             <NRIReveal direction="up">
               <div className={styles.statsRow}>
                 {[
-                  { icon: Bed, label: "Bedrooms", value: property.beds },
-                  { icon: Bath, label: "Bathrooms", value: property.baths },
-                  { icon: Square, label: "Sq. Ft.", value: property.sqft.toLocaleString() },
+                  { icon: Bed, label: property.bedsLabel || "Bedrooms", value: property.beds },
+                  { icon: Bath, label: property.bathsLabel || "Bathrooms", value: property.baths },
+                  { icon: Square, label: "Sq. Ft.", value: typeof property.sqft === 'number' ? property.sqft.toLocaleString() : property.sqft },
                   { icon: Clock, label: "Possession", value: property.possession || "On Request" },
                 ].map(({ icon: Icon, label, value }, i, arr) => (
                   <div key={label} className={styles.statCell}>

@@ -31,7 +31,7 @@ export default function Agents({ data }: { data: any }) {
                          src={agent.image} 
                          alt={agent.name}
                          fill
-                         style={{ objectFit: 'cover' }}
+                         style={{ objectFit: 'cover', objectPosition: 'center 10%' }}
                        />
                     </div>
                     <div className={styles.info}>
