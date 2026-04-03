@@ -60,9 +60,9 @@ export const siteData = {
       title: "Premier Commercial Solutions",
       subtitle: "Our specialized services focus on high-traffic retail spaces, grade-A corporate offices, and premium food court investments.",
       items: [
-        { id: "01", title: "Corporate Offices", description: "Grade-A office suites in Noida's emerging IT hubs, designed for modern enterprises and high-yield returns.", image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200" },
-        { id: "02", title: "Retail Boulevards", description: "High-exposure retail shops in high-footfall locations, ensuring maximum visibility and consistent rental income.", image: "https://images.unsplash.com/photo-1555529771-835f59bfc50c?auto=format&fit=crop&q=80&w=1200" },
-        { id: "03", title: "Dining & Leisure", description: "Premium food courts and entertainment zones in self-contained commercial ecosystems like GYGY FIVEO.", image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=1200" }
+        { id: "01", title: "Corporate Offices", description: "Grade-A office suites in Noida's emerging IT hubs, designed for modern enterprises and high-yield returns.", image: "/images/commercial_office_noida.png" },
+        { id: "02", title: "Retail Boulevards", description: "High-exposure retail shops in high-footfall locations, ensuring maximum visibility and consistent rental income.", image: "/images/CbmkqNbxGqLIF6f8HhhLjAtITV8.jpg" },
+        { id: "03", title: "Dining & Leisure", description: "Premium food courts and entertainment zones in self-contained commercial ecosystems like GYGY FIVEO.", image: "/images/MNaTdWhKQ4PCxwtMgQRe9ROUJoe510.jpg" }
       ]
     },
     agents: {
@@ -85,10 +85,10 @@ export const siteData = {
       title: "TRUSTED BY MANY,\nLOVED BY ALL",
       description: "Our clients' success stories reflect our commitment to excellence. See how we've helped them secure their future with smart commercial investments.",
       items: [
-        { name: "Ananya Sharma", role: "Tech Entrepreneur", image: "https://i.pravatar.cc/150?u=ananya", text: "Investo Grow helped me secure a premium office suite at GYGY Mentis. Their transparency and ROI projections were spot on. Highly recommended!", rating: 5 },
-        { name: "Deepika Reddy", role: "Retail Investor", image: "https://i.pravatar.cc/150?u=deepika", text: "The team simplified the entire process of investing in a high-street shop. I was worried about the paperwork, but Nitin and his team handled everything.", rating: 5 },
-        { name: "Rohan Malhotra", role: "Business Owner", image: "https://i.pravatar.cc/150?u=rohan", text: "Finding the right commercial spot in Noida can be a nightmare, but Sahil made it effortless. The 3rd-floor shop at FIVEO is already seeing great interest.", rating: 5 },
-        { name: "Priya Iyer", role: "Finance Professional", image: "https://i.pravatar.cc/150?u=priya", text: "Strategic advice and excellent follow-up. They don't just sell; they ensure your investment is managed well. Truly the best in Noida.", rating: 5 }
+        { name: "Ananya Sharma", role: "Tech Entrepreneur", image: "/images/1bXCvUXCPLThMThkksjOy63PM.jpg", text: "Investo Grow helped me secure a premium office suite at GYGY Mentis. Their transparency and ROI projections were spot on. Highly recommended!", rating: 5 },
+        { name: "Deepika Reddy", role: "Retail Investor", image: "/images/dbWDZuR15FVj9cDN2ngoxogWU.jpg", text: "The team simplified the entire process of investing in a high-street shop. I was worried about the paperwork, but Nitin and his team handled everything.", rating: 5 },
+        { name: "Rohan Malhotra", role: "Business Owner", image: "/images/h3b8XxI71wHeNvHUg0wtR8NAE.jpg", text: "Finding the right commercial spot in Noida can be a nightmare, but Sahil made it effortless. The 3rd-floor shop at FIVEO is already seeing great interest.", rating: 5 },
+        { name: "Priya Iyer", role: "Finance Professional", image: "/images/YgD80vVXRZoLGwTr5ZaspUEKk.jpg", text: "Strategic advice and excellent follow-up. They don't just sell; they ensure your investment is managed well. Truly the best in Noida.", rating: 5 }
       ]
     },
     faq: {
@@ -119,8 +119,8 @@ export const siteData = {
       items: [
         {
           id: "mentis-office-suites",
-          image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200",
-          imageSecondary: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800",
+          image: "/images/commercial_office_noida.png",
+          imageSecondary: "/images/RLD7TAwuETk2t51mW9hcW3YZu6816b1.jpg",
           status: "For Sale",
           location: "Sector 140, Noida",
           title: "GYGY Mentis Premium Office Suites",
@@ -138,8 +138,8 @@ export const siteData = {
         },
         {
           id: "fiveo-high-street",
-          image: "https://images.unsplash.com/photo-1519567281794-ab6e25be8c18?auto=format&fit=crop&q=80&w=1200",
-          imageSecondary: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800",
+          image: "/images/CbmkqNbxGqLIF6f8HhhLjAtITV8.jpg",
+          imageSecondary: "/images/yzpRxn2HI5TBopZVeE1K1WuVAd75d.jpg",
           status: "For Investment",
           location: "Sector 50, Noida",
           title: "GYGY FIVEO High Street Retail",
@@ -157,8 +157,8 @@ export const siteData = {
         },
         {
           id: "mentis-retail-blvd",
-          image: "https://images.unsplash.com/photo-1555529771-835f59bfc50c?auto=format&fit=crop&q=80&w=1200",
-          imageSecondary: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=800",
+          image: "/images/CbmkqNbxGqLIF6f8HhhLjAtITV8.jpg",
+          imageSecondary: "/images/RLD7TAwuETk2t51mW9hcW3YZu6816b1.jpg",
           status: "For Sale",
           location: "Sector 140, Noida",
           title: "Mentis Retail Boulevard",
@@ -176,8 +176,8 @@ export const siteData = {
         },
         {
           id: "fiveo-food-court",
-          image: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=1200",
-          imageSecondary: "https://images.unsplash.com/photo-1414235077428-338988a2e8c0?auto=format&fit=crop&q=80&w=800",
+          image: "/images/MNaTdWhKQ4PCxwtMgQRe9ROUJoe510.jpg",
+          imageSecondary: "/images/qLilEwH5SGNsGXKkBeJk4iACc.jpg",
           status: "For Investment",
           location: "Sector 50, Noida",
           title: "FIVEO Premium Food Court",
@@ -195,8 +195,8 @@ export const siteData = {
         },
         {
           id: "mentis-corporate-hub",
-          image: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=1200",
-          imageSecondary: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=800",
+          image: "/images/commercial_office_noida.png",
+          imageSecondary: "/images/RLD7TAwuETk2t51mW9hcW3YZu6816b1.jpg",
           status: "For Sale",
           location: "Sector 140, Noida",
           title: "Mentis Corporate Wing Hub",
@@ -214,8 +214,8 @@ export const siteData = {
         },
         {
           id: "fiveo-luxury-boutiques",
-          image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=1200",
-          imageSecondary: "https://images.unsplash.com/photo-1490481651871-ab68ec25d43d?auto=format&fit=crop&q=80&w=800",
+          image: "/images/CbmkqNbxGqLIF6f8HhhLjAtITV8.jpg",
+          imageSecondary: "/images/yzpRxn2HI5TBopZVeE1K1WuVAd75d.jpg",
           status: "For Sale",
           location: "Sector 50, Noida",
           title: "FIVEO Luxury Boutiques",
@@ -233,8 +233,8 @@ export const siteData = {
         },
         {
           id: "mentis-oculus-dining",
-          image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&q=80&w=1200",
-          imageSecondary: "https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&q=80&w=800",
+          image: "/images/MNaTdWhKQ4PCxwtMgQRe9ROUJoe510.jpg",
+          imageSecondary: "/images/qLilEwH5SGNsGXKkBeJk4iACc.jpg",
           status: "For Investment",
           location: "Sector 140, Noida",
           title: "Oculus Premium Dining Zone",
@@ -252,8 +252,8 @@ export const siteData = {
         },
         {
           id: "fiveo-fun-zone",
-          image: "https://images.unsplash.com/photo-1563853108-7667f7d1b32b?auto=format&fit=crop&q=80&w=1200",
-          imageSecondary: "https://images.unsplash.com/photo-1511884642898-4c92249e20b6?auto=format&fit=crop&q=80&w=800",
+          image: "/images/CbmkqNbxGqLIF6f8HhhLjAtITV8.jpg",
+          imageSecondary: "/images/qLilEwH5SGNsGXKkBeJk4iACc.jpg",
           status: "For Investment",
           location: "Sector 50, Noida",
           title: "FIVEO Fun & Leisure Zone",
@@ -277,8 +277,8 @@ export const siteData = {
       items: [
         {
           id: "verdant-heights",
-          image: "https://images.unsplash.com/photo-1486325212027-8081e485255e?auto=format&fit=crop&q=80&w=1400",
-          imageSecondary: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?auto=format&fit=crop&q=80&w=800",
+          image: "/images/RQA2wDd4pBGiWeZ2ktDtcszRbrM.jpg",
+          imageSecondary: "/images/yzpRxn2HI5TBopZVeE1K1WuVAd75d.jpg",
           title: "Verdant Heights",
           category: "Luxury Residential",
           location: "Sector 150, Noida",
@@ -295,8 +295,8 @@ export const siteData = {
         },
         {
           id: "serenity-villas",
-          image: "https://images.unsplash.com/photo-1564013799919-ab600027ffc6?auto=format&fit=crop&q=80&w=1400",
-          imageSecondary: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
+          image: "/images/BVa676Qcx73rJphRua2dXkWNAs.jpg",
+          imageSecondary: "/images/IAU2BSodEZAzSqJjl5B2xm2bys849e.jpg",
           title: "Serenity Villas",
           category: "Premium Villas",
           location: "Sector 128, Noida",
@@ -313,8 +313,8 @@ export const siteData = {
         },
         {
           id: "the-apex-towers",
-          image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=1400",
-          imageSecondary: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
+          image: "/images/RQA2wDd4pBGiWeZ2ktDtcszRbrM.jpg",
+          imageSecondary: "/images/yzpRxn2HI5TBopZVeE1K1WuVAd75d.jpg",
           title: "The Apex Towers",
           category: "Ultra Luxury",
           location: "Sector 94, Noida",
@@ -331,8 +331,8 @@ export const siteData = {
         },
         {
           id: "greenfield-square",
-          image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1400",
-          imageSecondary: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800",
+          image: "/images/CbmkqNbxGqLIF6f8HhhLjAtITV8.jpg",
+          imageSecondary: "/images/RLD7TAwuETk2t51mW9hcW3YZu6816b1.jpg",
           title: "Greenfield Square",
           category: "Commercial & Mixed-Use",
           location: "Sector 62, Noida",
@@ -382,8 +382,8 @@ export const siteData = {
     properties: [
       {
         id: "prop-1",
-        image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=1400",
-        imageSecondary: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?auto=format&fit=crop&q=80&w=800",
+        image: "/images/RQA2wDd4pBGiWeZ2ktDtcszRbrM.jpg",
+        imageSecondary: "/images/yzpRxn2HI5TBopZVeE1K1WuVAd75d.jpg",
         title: "Gold Coast Penthouse",
         location: "Sector 150, Noida",
         price: "₹7.5 Cr",
@@ -405,8 +405,8 @@ export const siteData = {
       },
       {
         id: "prop-2",
-        image: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=1400",
-        imageSecondary: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=800",
+        image: "/images/BVa676Qcx73rJphRua2dXkWNAs.jpg",
+        imageSecondary: "/images/IAU2BSodEZAzSqJjl5B2xm2bys849e.jpg",
         title: "The Imperial Villas",
         location: "Sector 143, Noida",
         price: "₹5.2 Cr",
@@ -428,8 +428,8 @@ export const siteData = {
       },
       {
         id: "prop-3",
-        image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=1400",
-        imageSecondary: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&q=80&w=800",
+        image: "/images/RQA2wDd4pBGiWeZ2ktDtcszRbrM.jpg",
+        imageSecondary: "/images/yzpRxn2HI5TBopZVeE1K1WuVAd75d.jpg",
         title: "Skyline Residences",
         location: "Sector 128, Noida",
         price: "₹9.8 Cr",
@@ -451,8 +451,8 @@ export const siteData = {
       },
       {
         id: "mentis-office",
-        image: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1200",
-        imageSecondary: "https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&q=80&w=800",
+        image: "/images/commercial_office_noida.png",
+        imageSecondary: "/images/RLD7TAwuETk2t51mW9hcW3YZu6816b1.jpg",
         status: "Under Construction",
         category: "Commercial",
         location: "Sector 140, Noida",
@@ -489,8 +489,8 @@ export const siteData = {
         description: "Positioned at the heart of Noida's commercial sector, Mentis Retail Boulevard provides unparalleled exposure. Surrounded by over 10 lakhs families, these high-street retail shops ensure massive daily footfall and great ROI.",
         highlights: ["High-street retail exposure", "10 Lakhs+ families nearby", "Direct Metro Station connectivity", "30 Min to Noida Airport"],
         amenities: ["Spacious Retail Shops", "Resting Sitting Alcove", "Ample Parking", "24/7 Security", "Central Air Conditioning"],
-        image: "https://images.unsplash.com/photo-1555529771-835f59bfc50c?auto=format&fit=crop&q=80&w=1200",
-        imageSecondary: "https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&q=80&w=800",
+        image: "/images/CbmkqNbxGqLIF6f8HhhLjAtITV8.jpg",
+        imageSecondary: "/images/RLD7TAwuETk2t51mW9hcW3YZu6816b1.jpg",
         rera: "UPRERAPRJ251909",
         badge: "High Footfall",
         roi: "12% Assured"
@@ -515,8 +515,8 @@ export const siteData = {
         rera: "UPRERAPRJ662072",
         badge: "Exclusive Retail",
         roi: "High Yield",
-        image: "https://images.unsplash.com/photo-1519567281794-ab6e25be8c18?auto=format&fit=crop&q=80&w=1200",
-        imageSecondary: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&q=80&w=800"
+        image: "/images/CbmkqNbxGqLIF6f8HhhLjAtITV8.jpg",
+        imageSecondary: "/images/yzpRxn2HI5TBopZVeE1K1WuVAd75d.jpg"
       },
       {
         id: "fiveo-fun-zone",
@@ -538,8 +538,8 @@ export const siteData = {
         rera: "UPRERAPRJ662072",
         badge: "Entertainment",
         roi: "15% ROI",
-        image: "https://images.unsplash.com/photo-1563853108-7667f7d1b32b?auto=format&fit=crop&q=80&w=1200",
-        imageSecondary: "https://images.unsplash.com/photo-1511884642898-4c92249e20b6?auto=format&fit=crop&q=80&w=800"
+        image: "/images/CbmkqNbxGqLIF6f8HhhLjAtITV8.jpg",
+        imageSecondary: "/images/qLilEwH5SGNsGXKkBeJk4iACc.jpg"
       }
     ]
   }

@@ -15,7 +15,7 @@ const cases = [
     tag: "Luxury Residential",
     roi: "+22% ROI",
     location: "Sector 150, Noida",
-    img: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&q=80&w=900",
+    img: "/images/RQA2wDd4pBGiWeZ2ktDtcszRbrM.jpg",
   },
   {
     propertyId: "prop-2",
@@ -23,7 +23,7 @@ const cases = [
     tag: "Premium Township",
     roi: "+17% ROI",
     location: "Sector 143, Noida",
-    img: "https://images.unsplash.com/photo-1613977257363-707ba9348227?auto=format&fit=crop&q=80&w=900",
+    img: "/images/BVa676Qcx73rJphRua2dXkWNAs.jpg",
   },
   {
     propertyId: "prop-3",
@@ -31,7 +31,7 @@ const cases = [
     tag: "Ultra Luxury",
     roi: "+19% ROI",
     location: "Sector 128, Noida",
-    img: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&q=80&w=900",
+    img: "/images/yzpRxn2HI5TBopZVeE1K1WuVAd75d.jpg",
   },
 ];
 
