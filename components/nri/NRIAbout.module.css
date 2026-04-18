@@ -49,9 +49,23 @@
 .imageContent {
   position: relative;
   height: 500px;
-  border-radius: 12px;
+  border-radius: 20px;
   overflow: hidden;
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.6);
+  background: radial-gradient(circle at 30% 30%, rgba(189, 107, 32, 0.2) 0%, transparent 100%),
+              linear-gradient(135deg, #1a1a1a 0%, #050505 100%);
+  border: 1px solid rgba(189, 107, 32, 0.1);
+}
+
+.imageContent::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: linear-gradient(rgba(189, 107, 32, 0.05) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(189, 107, 32, 0.05) 1px, transparent 1px);
+  background-size: 40px 40px;
+  opacity: 0.3;
+  pointer-events: none;
 }
 
 .imageContent::after {
